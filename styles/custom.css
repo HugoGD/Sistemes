@@ -1,0 +1,17 @@
+.custom-footer {
+    text-align: center;
+    background-color: #f8f9fa; /* Fondo claro */
+    padding: 10px 0;
+    font-size: 14px;
+    color: #333;
+    border-top: 1px solid #ddd; /* Línea superior */
+}
+
+.custom-footer a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.custom-footer a:hover {
+    text-decoration: underline;
+}
