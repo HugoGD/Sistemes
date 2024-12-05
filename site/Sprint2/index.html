@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Sprint2 - Projecto FOG Hugo</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../styles/custom.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Sprint2";
+        var mkdocs_page_input_path = "Sprint2.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Projecto FOG Hugo
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Introduccion</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../Sprint1/">Sprint1</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="./">Sprint2</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#gestion-de-procesos">Gestión de procesos</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#gestion-de-usuarios-grupos">Gestión de usuarios, grupos</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#archivos-a-tener-en-cuenta">Archivos a tener en cuenta</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#-passwd">- PASSWD</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#-group">- GROUP</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#-shadow">- SHADOW</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#-gshadow">- GSHADOW</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#usuarios">Usuarios</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#comandos-basicos">Comandos Basicos</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#creacion-de-usuarios">Creación de usuarios</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#eliminar-usuarios">Eliminar Usuarios</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#bloquear-usuarios">Bloquear Usuarios</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#otros-comandos">Otros comandos</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#modificaciones-crear-usuarios">Modificaciones crear usuarios</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#configuracion-skell">Configuracion Skell</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#configuracion-logindefs">Configuración login.defs</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#configuracion-adduserconf">Configuración adduser.conf</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#configuracion-useradd">Configuración useradd</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#permisos">Permisos</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#taula-permisos-decimal">Taula Permisos Decimal</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#permisos-normals">Permisos Normals</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#permisos-especials">Permisos Especials</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#llista-de-control-dacces">Llista de control d'acces</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#permisos-umask">Permisos umask</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#sistemes-de-fitxers-i-particions">Sistemes de fitxers i particions</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#comandes">COMANDES:</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#estructura-de-la-informacio">Estructura de la informació:</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#mida-sector-y-block">Mida sector y block:</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#fragmentacio-interna">Fragmentació interna:</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#fragmentacio-externa">Fragmentació externa:</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#copies-de-seguretat-i-automatitzacio-de-tasques">Còpies de seguretat i automatització de tasques</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#quotes-de-disc">Quotes de disc</a>
+    </li>
+    </ul>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Projecto FOG Hugo</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Sprint2</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="sprint-2">Sprint 2</h1>
+<h2 id="gestion-de-procesos">Gestión de procesos</h2>
+<h2 id="gestion-de-usuarios-grupos">Gestión de usuarios, grupos</h2>
+<h3 id="archivos-a-tener-en-cuenta">Archivos a tener en cuenta</h3>
+<h4 id="-passwd"><em>- PASSWD</em></h4>
+<p><strong>Ruta:</strong> <code>/etc/passwd</code></p>
+<p><strong>Extructura:</strong> nombre:contraseña(x):id_usuario(1xxx):grupo_principal(1xxx):nombre_completo:Direccion_Directorio</p>
+<p><strong>Funcionalidad:</strong>  Contiene la información básica de las cuentas de usuario del sistema. </p>
+<p><img alt="Passwd" src="../Imagenes/Sprint2/passwd.png" /></p>
+<h4 id="-group"><em>- GROUP</em></h4>
+<p><strong>Ruta:</strong> <code>/etc/group</code></p>
+<p><strong>Extructura:</strong> nombre;contraseña:identificador:(Mas usuarios si hay)</p>
+<p><strong>Funcionalidad:</strong> Contiene la información sobre los grupos definidos en el sistema. </p>
+<p><img alt="Group" src="../Imagenes/Sprint2/Group.png" /></p>
+<h4 id="-shadow"><em>- SHADOW</em></h4>
+<p><strong>Ruta:</strong> <code>/etc/shadow</code></p>
+<p><strong>Extructura:</strong> nombre_de_usuario:contraseña_cifrada:último_cambio:min:max:aviso:inactividad:expiración:</p>
+<p><strong>Funcionalidad:</strong> Almacena la información cifrada de las contraseñas de los usuarios, así como otros parámetros relacionados con la expiración y validez de las contraseñas.</p>
+<p><img alt="Shadow" src="../Imagenes/Sprint2/shadow.png" /></p>
+<h4 id="-gshadow"><em>- GSHADOW</em></h4>
+<p><strong>Ruta:</strong> <code>/etc/gshadow</code></p>
+<p><strong>Extructura:</strong> nombre_del_grupo:contraseña_cifrada:administradores:miembros</p>
+<p><strong>Funcionalidad:</strong> Se utiliza para almacenar información de los grupos, incluyendo las contraseñas cifradas de los grupos y los miembros de cada grupo con permisos especiales. </p>
+<p><img alt="Gshadow" src="../Imagenes/Sprint2/gshadow.png" /></p>
+<p><strong>SKEL</strong></p>
+<p><strong><em>Todos los archivos mencionados se encuentran dentro del skel, para poder verlos tendremos que hacer un <code>ls -la</code> ya que todo archivo que tenga un "." antes de su nombre estara oculto y no se vera con un simple ls</em></strong></p>
+<p><code>/etc/skel</code> -&gt; Carpetas que se crearan cuando un nuevo usuario abra la interfaz por primera vez</p>
+<p><img alt="profile" src="../Imagenes/Sprint2/profile.png" /></p>
+<p><strong>.profile</strong> -&gt; Este archivo se ejecuta cuando inicias sesión en un shell de login (por ejemplo, cuando accedes al sistema desde un terminal virtual o SSH).</p>
+<p><strong>Modificacion</strong> -&gt; En este caso indicamos que la carpeta de home del usuario en vez de crearse en el /home se crearan en el /var</p>
+<p><img alt="bashrc" src="../Imagenes/Sprint2/bashrc.png" /></p>
+<p><strong>.bashrc</strong> -&gt; Sirve para configurar cosas como alias, funciones, colores, y otras personalizaciones del shell.</p>
+<p><strong>Modificacion</strong> -&gt; En este caso estamos creando una modificación de un comando, cuando coloquemos "conexio" se hara un <code>ls -la</code></p>
+<p><img alt="bashlogout" src="../Imagenes/Sprint2/bash_logout.png" /></p>
+<p><strong>.bash_logout</strong> -&gt; Este archivo se ejecuta al cerrar sesión en un shell de login.</p>
+<p><strong>Modificacion</strong> -&gt; En este caso estamos haciendo que siempre que se deslogue se eliminara la carpeta de descargas de los usuarios que tengan la carpeta en /home</p>
+<p><strong>VARIABLE: $USER</strong> -&gt; actua únicament sobre l’usuari que es deslogea.</p>
+<h3 id="usuarios">Usuarios</h3>
+<h3 id="comandos-basicos">Comandos Basicos</h3>
+<h4 id="creacion-de-usuarios"><em>Creación de usuarios</em></h4>
+<p>Para crear usuarios tenemos 2 comandos los cuales podemos usar useradd y adduser.</p>
+<h5 id="useradd"><strong>useradd:</strong></h5>
+<ul>
+<li>Es un comando más básico y de bajo nivel.</li>
+<li>Forma parte de las herramientas de gestión de usuarios de Linux.</li>
+<li>No realiza pasos adicionales ni configura parámetros automáticamente. Por ejemplo, al usar useradd, hay que especificar manualmente la creación del directorio home, los grupos, la shell, y otras configuraciones si no se desea usar los valores predeterminados.</li>
+<li>Ideal para usuarios avanzados que necesitan personalizar cada aspecto de la cuenta.</li>
+</ul>
+<p><img alt="useradd" src="../Imagenes/Sprint2/useradd1.png" /></p>
+<p>Creamos su home con el comando <code>mkdir</code> y le entregamos el propietario con el comando <code>sudo chown</code>.</p>
+<p><img alt="Directorio_Permisos" src="../Imagenes/Sprint2/directorio_propietario.png" /></p>
+<p>Le añadimos una contraseña al usuario</p>
+<p><img alt="Contraseña" src="../Imagenes/Sprint2/contrase%C3%B1a.png" /></p>
+<p>Le asignamos el Shell predeterminado</p>
+<p><img alt="Shell" src="../Imagenes/Sprint2/Shell.png" /></p>
+<p>Comprobamos que se encuentre en los archivos y en la inteficie grafica:</p>
+<p><img alt="Comprobacion" src="../Imagenes/Sprint2/Comprobacion.png" /></p>
+<p><img alt="Interficie_Grafica" src="../Imagenes/Sprint2/Comprobacion2.png" /></p>
+<h5 id="adduser"><strong>adduser:</strong></h5>
+<ul>
+<li>Es un script de Perl que utiliza useradd internamente.</li>
+<li>Proporciona una interfaz más amigable y realiza varias configuraciones por defecto, como la creación automática del directorio home, la asignación de un grupo por defecto, y la solicitud de una contraseña durante el proceso.</li>
+<li>Es más sencillo y práctico para usuarios que quieren crear cuentas de usuario sin preocuparse por especificar cada parámetro.</li>
+</ul>
+<p><img alt="adduser" src="../Imagenes/Sprint2/adduser1.png" /></p>
+<p><strong>RESULTADOS:</strong></p>
+<p><img alt="Mostra_Usuaris" src="../Imagenes/Sprint2/Provausuaris.png" /></p>
+<h3 id="eliminar-usuarios"><em>Eliminar Usuarios</em></h3>
+<p>El comando <strong>deluser</strong> en sistemas Unix/Linux se utiliza para eliminar usuarios del sistema de manera sencilla.</p>
+<p>1 - <strong>Eliminar un usuario:</strong></p>
+<p>Si se ejecuta sin opciones adicionales, deluser elimina al usuario especificado del sistema, pero deja intactos los archivos del usuario, incluyendo su directorio home.</p>
+<p><code>deluser nombre_de_usuario</code></p>
+<p>2 - <strong>Eliminar un usuario y su directorio home:</strong></p>
+<p>Usando la opción --remove-home, deluser elimina al usuario junto con su directorio home y su contenido.</p>
+<p><code>deluser --remove-home hugo</code></p>
+<p>3 - <strong>Eliminar un usuario y sus archivos:</strong></p>
+<p>Con la opción --remove-all-files, deluser elimina todos los archivos de propiedad del usuario, independientemente de su ubicación en el sistema, además del directorio home.</p>
+<p><code>deluser --remove-all-files hugo</code></p>
+<p>4 - <strong>Eliminar un usuario de un grupo:</strong></p>
+<p>deluser también permite eliminar a un usuario de un grupo específico sin eliminar al usuario del sistema.</p>
+<p><code>deluser hugo sudo</code></p>
+<p>5 - <strong>Eliminar un grupo:</strong></p>
+<p>También se puede usar deluser para eliminar un grupo utilizando la opción --group.</p>
+<p><code>deluser --group grupo1</code></p>
+<h3 id="bloquear-usuarios"><em>Bloquear Usuarios</em></h3>
+<p><code>usermod -L &lt;nom&gt;</code></p>
+<p>cat /etc/shadow </p>
+<p>Comprovamos que delante del password aparece un "!" para verificar que se a bloqueado</p>
+<p><img alt="Bloqueada" src="../Imagenes/Sprint2/bloqueada.png" /></p>
+<p><code>man usermod</code> (opcions de usermod)</p>
+<p><code>usermod -U &lt;nom&gt;</code></p>
+<p>Desbloquea al usuario por lo tanto desaparece el '!' del /etc/shadow</p>
+<p><img alt="Bloqueada" src="../Imagenes/Sprint2/Desbloqueada.png" /></p>
+<h4 id="otros-comandos">Otros comandos</h4>
+<ul>
+<li>
+<p><code>usermod --shell /bin/bash &lt;nom&gt;</code> (para cambiar el interprete de 'sh' a 'bash')</p>
+</li>
+<li>
+<p><code>mkdir &lt;nom&gt;</code> (crea carpeta para un nuevo usuario)</p>
+</li>
+<li>
+<p><code>chown &lt;nom&gt;:&lt;nom&gt; &lt;nom&gt;</code> (1:usuari 2:grup 3:nom carpeta)</p>
+</li>
+<li>
+<p><code>passwd &lt;nom&gt;</code> (para configurar contraseña)</p>
+</li>
+<li>
+<p><code>usermod -p &lt;contrasenya&gt; &lt;nom&gt;</code> (contraseña con texto plano)</p>
+</li>
+<li>
+<p><code>addgroup &lt;nom&gt;</code> (crea un grupo con su id)</p>
+</li>
+<li><code>adduser &lt;nom&gt; &lt;nombre_grupo&gt;</code> (añade un usuario dentro de un grupo)</li>
+</ul>
+<h5 id="gpasswd">GPASSWD</h5>
+<ul>
+<li>
+<p><code>gpasswd -a &lt;nom&gt; &lt;nombre_grupo&gt;</code> (añade un usuario a grup)</p>
+</li>
+<li>
+<p><code>gpasswd -A &lt;nom&gt; &lt;nombre_grupo&gt;</code> (hace que un usuario sea admin de un grupo)</p>
+</li>
+</ul>
+<h5 id="usermod">USERMOD</h5>
+<ul>
+<li>
+<p><code>usermod -a -G &lt;nomg&gt; &lt;nom&gt;</code>(añade un usuario a un grupo y con la '-a' no elige el usuario de otros grupos)</p>
+</li>
+<li>
+<p><code>usermod  -G &lt;nombre_grupo&gt; &lt;nombre&gt;</code> (cambia el grupo principal del usuario)</p>
+</li>
+<li>
+<p><code>groupmod -n &lt;Nuevo_nombre_grupo&gt; &lt;nombre_grupo&gt;</code> (cambia el nombre del grupo)</p>
+</li>
+</ul>
+<h3 id="modificaciones-crear-usuarios">Modificaciones crear usuarios</h3>
+<p>Los archivos que vamos a modificar en esta parte y los importantes son:</p>
+<ul>
+<li>
+<p>/etc/login.defs -&gt; modifica los parametros a la hora de crear usuarios en general.</p>
+</li>
+<li>
+<p>/etc/adduser.conf -&gt; Modifica parametros al usar el comando adduser.</p>
+</li>
+<li>
+<p>/etc/default/useradd -&gt; Modifica parametros al usar el comando useradd.</p>
+</li>
+<li>
+<p>/etc/skell -&gt; Todo lo que se cree dentro de esta carpeta se copiara en las homes de cada usuario creado</p>
+</li>
+</ul>
+<h4 id="configuracion-skell">Configuracion Skell</h4>
+<p>En el Skell si haces un <strong>ls -la</strong> te saldran muchos archivos los cuales estan ocultos y ya explique anteriormente para que servian, en este caso lo que nos va a interesar es crear un enlace para comprovar si se crea en los nuevos usuarios.</p>
+<p><img alt="Skell" src="../Imagenes/Sprint2/etcskel.png" /></p>
+<h4 id="configuracion-logindefs">Configuración login.defs</h4>
+<p>Como mencione anteriormente este archivo modifica los parametros defaults a la hora de crear un usuario.</p>
+<p><img alt="login.defs" src="../Imagenes/Sprint2/modificaciones%20login.defs.png" /></p>
+<p>En este caso los parametros que se modificaron son</p>
+<ul>
+<li>
+<p><strong>UID_MIN 2000</strong> -&gt; Esto hara que su numero de usuario sea minimo 2000 de manera default seria 1000</p>
+</li>
+<li>
+<p><strong>GID_MIN 2000</strong> -&gt; Esto hara que el numero de grupo sea minimo 2000 de manera default seria 1000</p>
+</li>
+</ul>
+<p><img alt="Login.defs2" src="../Imagenes/Sprint2/login.defs2.png" /></p>
+<p>Tambien se modifico este apartado del mismo archivo el cual hara cambios con la contraseña.</p>
+<ul>
+<li><strong>PASS_MAX_DAYS 30</strong> -&gt; Esto hara que la misma contraseña solo se podra tener durante 30 dias, despues se tendra que cambiar</li>
+<li><strong>PASS_MIN_DAYS 5</strong> -&gt; Esto hara que tienen que pasar minimo 5 dias entre cambio y cambio de contraseña</li>
+<li><strong>PASS_WARN_AGE 10</strong> -&gt; Esto hara que te avise 10 dias antes de que te caduque la contraseña.</li>
+</ul>
+<h4 id="configuracion-adduserconf">Configuración adduser.conf</h4>
+<p>Todo lo que se toque en este archivo cambiara los parametros a la hora de crear un usuario con el comando <code>adduser</code>. Todo lo que se ponga en este archivo prevalece sobre lo que se ponga en el archivo login.defs.</p>
+<p><img alt="Config_adduser" src="../Imagenes/Sprint2/modificaciones%20adduser.png" /></p>
+<p>En este archivo se modificaron los siguientes parametros:</p>
+<ul>
+<li><strong>DHOME=/tmp</strong> -&gt; Esto hara que las carpetas "home" de los usuarios no se crearan en la carpeta "HOME" sino en la ruta que tu le pongas en este caso en "/tmp"</li>
+<li><strong>FIRST_UID=2000</strong> -&gt; Esto hara que su numero de usuario sea minimo 2000 de manera default seria 1000</li>
+<li><strong>FIRST_GID=2000</strong> -&gt; Esto hara que el numero de grupo sea minimo 2000 de manera default seria 1000</li>
+</ul>
+<h6 id="comprobaciones">Comprobaciones</h6>
+<p><img alt="Demostración" src="../Imagenes/Sprint2/Comprobaciones%20adduser.png" /></p>
+<h4 id="configuracion-useradd">Configuración useradd</h4>
+<p>Todo lo que se toque en este archivo cambiara los parametros a la hora de crear un usuario con el comando <code>useradd</code></p>
+<p><img alt="modificacion_useradd" src="../Imagenes/Sprint2/modificaciones%20useradd.png" /></p>
+<p>En este archivo viene todo siempre completamente comentado ya que nunca te pide especificaciones a la hora de crear un usuario ya que lo tienes que hacer manualmente.</p>
+<p>Lo unico que se descomento es el paraemtro:
+- <strong>SHELL=/bin/bash</strong> -&gt; Esto determina el SHELL de cada usuario creado con useradd en este caso seria /bin/bash.</p>
+<p><img alt="Comprobaciones" src="../Imagenes/Sprint2/Comprobacion%20useradd.png" /></p>
+<p>Igualmente las modificaciones que se seguirian en la creación de un usuario con useradd serian las indicadas en el archivo <code>login.defs</code></p>
+<h2 id="permisos">Permisos</h2>
+<h4 id="taula-permisos-decimal">Taula Permisos Decimal</h4>
+<p><img alt="Taula" src="../Imagenes/Sprint2/Taula%20permisos.png" /></p>
+<h4 id="permisos-normals">Permisos Normals</h4>
+<p><strong>PRUEBAS</strong>
+Para hacer las pruebas creamos un grupo y usuarios, añadimos a 2 de los usuarios creados dentro del grupo en este caso se llama “parchis”</p>
+<p>Metemos 2 usuarios al grupo:
+<img alt="Grupo" src="../Imagenes/Sprint2/1.%20Creaci%C3%B3_Grup.png" /></p>
+<p><strong>chgrp</strong>
+Creamos la carpeta “prova” con un archivo en el interior llamado “hola” y le modificamos los permisos añadiendo al grupo parchis.
+<img alt="chgrp" src="../Imagenes/Sprint2/2.%20Crear_Carpeta.png" /></p>
+<p>Añadimos al grupo como propietario:
+<img alt="chgrp_proves" src="../Imagenes/Sprint2/3.%20chgrp_proves.png" />
+El comando que utilizamos es <code>chgrp</code></p>
+<p><strong>Estructura:</strong> <code>chgrp [Parametre] [Grup] [Directori/archiu]</code></p>
+<p>En nuestro caso utilizamos <strong>“-R”</strong> esto hara que sea recursivo, es decir que todo lo que haya en el interior de la carpeta tambien se le aplicaran los permisos.</p>
+<p><strong>CHMOD</strong>
+Ahora cambiamos los permisos tambien para el resto de grupos/usuarios/</p>
+<p><img alt="chmod" src="../Imagenes/Sprint2/4.%20chmod.png" /></p>
+<p><strong>Orden:</strong> Usuario-Grupo-Others</p>
+<p><strong>Estructura:</strong> <code>chmod [Parámetro] [Permisos que quieres otorgar] [Carpeta]</code></p>
+<p>En nuestro caso utilizamos <strong>“-R”</strong> esto hará que sea recursivo, es decir que todo lo que haya en el interior de la carpeta también se le aplicarán los permisos.</p>
+<p><strong>PRUEBAS GROC (Permisos Ususari)</strong></p>
+<p><img alt="Prueba1" src="../Imagenes/Sprint2/5.%20comprobaci%C3%B3n%20chmod.png" /></p>
+<p><img alt="Prueba" src="../Imagenes/Sprint2/7.%20Comprobaciones%20propietari.png" /></p>
+<p>Podemos comprobar que con la configuración que le hemos dado GROC al tener permisos de usuario puede hacer lo que sea dentro de la carpeta.</p>
+<p><strong>PRUEBAS VERDE (Permisos Grup)</strong></p>
+<p><img alt="Prueba2" src="../Imagenes/Sprint2/6.%20Comprobacion%20permisos%20chmod-chgrp-grup.png" /></p>
+<p>Podemos ver que “Verd” ya que tiene los permisos de grupo únicamente podrá entrar y ver el contenido del interior del directorio, pero no podrá modificar nada de su interior ni ver el contenido de los archivos del interior.</p>
+<p><strong>PRUEBA ROIG (permisos Others)</strong></p>
+<p><img alt="Prueba3" src="../Imagenes/Sprint2/8.%20Comprobaciones%20Others.png" /></p>
+<p>Podemos ver que “Roig” ya que tiene los permisos de Others no podrá ni acceder ni modificar el interior del directorio,</p>
+<h4 id="permisos-especials">Permisos Especials</h4>
+<p>Para comprobar los permisos especiales utilizaremos una carpeta llamada Compartida, queremos que en esta carpeta todos los usuarios dentro del grupo de parchís puedan subir sus archivos y ver el interior pero no pueda eliminar los archivos del resto.</p>
+<p><strong>Creamos la carpeta</strong></p>
+<p><img alt="Carpeta" src="../Imagenes/Sprint2/Crear%20Carpeta.png" /></p>
+<p><strong>Sticky:</strong></p>
+<p>Utilizaremos el chmod, le añadiremos unos permisos normales “757” pero le colocaremos un “1” delante, esto hace que se le apliquen todos los permisos al grupo de Others pero no puedan eliminar documentos de otros usuarios.</p>
+<p><img alt="Sticky" src="../Imagenes/Sprint2/utilizaci%C3%B3n%20Sticky.png" /></p>
+<p><strong>Comprobaciones:</strong></p>
+<p>Creo 2 carpetas con el usuario “Roig” para comprobar que puede crear archivos en el interior de la carpeta, seguidamente compruebo que el puede eliminar sus propios archivos.</p>
+<p><img alt="ComprobacionRoig" src="../Imagenes/Sprint2/Comprobaciones_rojo.png" /></p>
+<p>Ahora cambio al usuario “Blau” y compruebo que puede crear sus archivos y que no puede eliminar los de Roig.</p>
+<p><img alt="ComprobacionBlau" src="../Imagenes/Sprint2/comprobaciones_blau" /></p>
+<h4 id="llista-de-control-dacces">Llista de control d'acces</h4>
+<p>Para crear la lisa de controles utilizaremos el comando:</p>
+<p><code>getfacl [Nombre archivo]</code></p>
+<p>El comando getfacl en Linux se utiliza para mostrar las Listas de Control de Acceso (ACL) de archivos y directorios.</p>
+<p><strong>setfacl</strong></p>
+<p>Este comando nos servirá para hacer excepciones sobre carpetas a usuarios en concreto o grupos en concreto</p>
+<p><img alt="setfacl" src="../Imagenes/Sprint2/setfacl.png" /></p>
+<p>Estructura: <code>setfacl -m [user/group]:[usuari/grup]:[permisos] (nom carpeta)</code></p>
+<p><strong>Comprobaciones</strong></p>
+<p><img alt="Comprobacionessetfcl" src="../Imagenes/Sprint2/comprobaciones%20setfacl.png" /></p>
+<p><strong>Otros parametros</strong></p>
+<p><code>setfacl -b (archivo)</code> → Sirve para eliminar todas las excepciones que esten en un archivo/directorio</p>
+<p><img alt="Comprobacionessetfcl-b" src="../Imagenes/Sprint2/setfacl%20-b.png" /></p>
+<p><code>setfacl -x (usuario) (directorio)</code> → Sirve para eliminar las excepciones de 1 usuario en concreto sobre 1 directorio.</p>
+<p><img alt="Comprobacionessetfcl" src="../Imagenes/Sprint2/comprobaciones%20setfacl.png" /></p>
+<p><img alt="Comprobacionessetfcl-x" src="../Imagenes/Sprint2/setfacl%20-x.png" /></p>
+<h4 id="permisos-umask">Permisos umask</h4>
+<p><code>umask</code> -&gt; comprobar la máscara que tienes</p>
+<p><img alt="umask" src="../Imagenes/Sprint2/umask_normal_permisos.png" /></p>
+<p><strong>La mascara 022</strong> = máscara del <strong>root</strong></p>
+<p><code>umask (numero)</code> -&gt; Te cambia la máscara al numero que tu le asigne</p>
+<p><img alt="umaskcambiado" src="../Imagenes/Sprint2/umaskcambiado.png" /></p>
+<ul>
+<li>Dependiendo el número de mascaras indicará los permisos que se le otorgaran a los directorios y archivos.</li>
+</ul>
+<p><strong>Para calcular la mascara:</strong></p>
+<p>Para calcular los permisos que dará una máscara hay que hacer la operación ahn con números binarios entre los permisos que se otorgan de manera default en el SO en el caso de los directorios (777) y en el caso de los archivos (640), seguidamente tienes que pasar a binario la máscara que tengas en nuestro caso 002 despues hacerla a la inversa es decir los 0-&gt;1 y 1-&gt;0, después al realizar el cálculo ahn hay que volver a invertir la máscara que nos dará es decir los 0-&gt;1 y 1-&gt;0, seguidamente pasamos nuevamente de binario a decimal y esa sera la máscara que tendremos que usar.</p>
+<p><img alt="calcularumask" src="../Imagenes/Sprint2/calcularumask.png" /></p>
+<p><strong>Modificar umask para nuevos usuarios:</strong></p>
+<p>Usaremos el archivo <code>/etc/login.defs</code> </p>
+<p><img alt="cambiarumasknuevos" src="../Imagenes/Sprint2/cambiarumasktodos.png" /></p>
+<p>Modificaremos el parámetro <strong>UMASK -&gt; 022</strong> al número que nosotros queramos.</p>
+<p><img alt="Modificacion" src="../Imagenes/Sprint2/cambiado.png" /></p>
+<p>Creamos el nuevo usuario para comprobar que se a cambiado:</p>
+<p><img alt="usuarionuevo" src="../Imagenes/Sprint2/usuarioumask.png" /></p>
+<p><img alt="umasknueva" src="../Imagenes/Sprint2/umasknuevo.png" /></p>
+<h2 id="sistemes-de-fitxers-i-particions">Sistemes de fitxers i particions</h2>
+<h3 id="comandes">COMANDES:</h3>
+<p><code>fdisk -l</code>-&gt; Da información sobre los discos del sistema operativo.
+<img alt="fdisk" src="../Imagenes/Sprint2/fdisk.png" /></p>
+<p><code>tune2fs -l (partició)</code>-&gt; Sabremos la mida del Block que tiene servida la partición.
+<img alt="tune2fs" src="../Imagenes/Sprint2/tune2fs.png" /></p>
+<p><code>df -T</code> -&gt; Sirve para ver todas las particiones que tenemos y el sistema de archivos y mas información.
+<img alt="df -T" src="../Imagenes/Sprint2/df.png" /></p>
+<p><code>du -sh (archivo)</code> -&gt; Sirve para obtener información sobre el tamaño de un archivo o directorio en un formato más fácil de leer para las personas.
+<img alt="du" src="../Imagenes/Sprint2/du-sh.png" /></p>
+<p><code>e4defrag -c (partición)</code> -&gt; Es un desfragmentador de Linux, con el parámetro “-c” únicamente dará información necesaria para saber si tenemos que desfragmentar el disco.</p>
+<p><img alt="e4defrag" src="../Imagenes/Sprint2/e4info.png" /></p>
+<p><code>e4defrag (partición)</code> -&gt; Sirve para comenzar a desfragmentar </p>
+<p><img alt="e4defragejec" src="../Imagenes/Sprint2/e4ejecucion.png" /></p>
+<h3 id="estructura-de-la-informacio">Estructura de la informació:</h3>
+<h4 id="mida-sector-y-block">Mida sector y block:</h4>
+<p>El sector es la unidad mínima física donde se guardan los datos y por defecto son 512 bytes y el sistema operativa no trabaja en sectores trabaja en blocks y los blocks es la unidad mínima lógica donde se guardan los datos por defecto. El tamaño del sector no se puede cambiar viene definida de fábrica, pero el tamaño del block si que se puede cambiar cuando formateamos la partición.</p>
+<h4 id="fragmentacio-interna">Fragmentació interna:</h4>
+<p>La fragmentación interna es toda esa parte desaprovechada de los blocks porque no se acaban de llenar.</p>
+<p>La fragmentación interna se puede solucionar disminuyendo o aumentando la medida del block pero siempre hay que tener en cuenta que bajará el rendimiento ya que los archivos estarán más fraccionados</p>
+<h4 id="fragmentacio-externa">Fragmentació externa:</h4>
+<p>La fragmentación externa cunado baja el rendimiento del sistema porque los archivos no se guardan en bloques continuos en la memoria, lo arreglamos con la desfragmentación.</p>
+<h2 id="copies-de-seguretat-i-automatitzacio-de-tasques">Còpies de seguretat i automatització de tasques</h2>
+<h2 id="quotes-de-disc">Quotes de disc</h2>
+              
+            </div>
+          </div><footer class="custom-footer">
+    <p>
+        <a href="" target="_blank" rel="noopener noreferrer">MKDocs</a> 
+        © 2024 by Hugo Gallardo is licensed under 
+        <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="noopener noreferrer">CC BY-NC-ND 4.0</a>
+    </p>
+</footer>
+    
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../Sprint1/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
