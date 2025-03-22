@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Sprint2 - Projecto FOG Hugo</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../styles/custom.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Sprint2";
+        var mkdocs_page_input_path = "Sprint2.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Projecto FOG Hugo
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Introduccion</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../Sprint1/">Sprint1</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="./">Sprint2</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#gestion-de-procesos">Gestión de procesos</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#top">TOP</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#pstree">pstree</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#ps-aux">ps aux</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#ctrlc">Ctrl+C</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#ctrlz">Ctrl+Z</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#jobs">jobs</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#fg">fg %</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#kill-9-pid">kill -9 PID</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#gestion-de-usuarios-grupos">Gestión de usuarios, grupos</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#archivos-a-tener-en-cuenta">Archivos a tener en cuenta</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#-passwd">- PASSWD</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#-group">- GROUP</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#-shadow">- SHADOW</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#-gshadow">- GSHADOW</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#usuarios">Usuarios</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#comandos-basicos">Comandos Basicos</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#creacion-de-usuarios">Creación de usuarios</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#eliminar-usuarios">Eliminar Usuarios</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#bloquear-usuarios">Bloquear Usuarios</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#otros-comandos">Otros comandos</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#modificaciones-crear-usuarios">Modificaciones crear usuarios</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#configuracion-skell">Configuracion Skell</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#configuracion-logindefs">Configuración login.defs</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#configuracion-adduserconf">Configuración adduser.conf</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#configuracion-useradd">Configuración useradd</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#permisos">Permisos</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#taula-permisos-decimal">Taula Permisos Decimal</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#permisos-normals">Permisos Normals</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#permisos-especials">Permisos Especials</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#llista-de-control-dacces">Llista de control d'acces</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#permisos-umask">Permisos umask</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#sistemes-de-fitxers-i-particions">Sistemes de fitxers i particions</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#comandes">COMANDES:</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#estructura-de-la-informacio">Estructura de la informació:</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#mida-sector-y-block">Mida sector y block:</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#fragmentacio-interna">Fragmentació interna:</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#fragmentacio-externa">Fragmentació externa:</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#creacion-de-particiones-y-formatear">Creación de particiones y formatear</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#tipo-de-formateo">Tipo de formateo</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#practica">Practica</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#comprobacion">Comprobacion</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#formatear">Formatear</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#montaje-particiones">Montaje particiones</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#comparticion-de-carpeta">Compartición de carpeta</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#quotes-de-disc">Quotes de disc</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#copies-de-seguretat-i-automatitzacio-de-tasques">Còpies de seguretat i automatització de tasques</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#teoria-tabla-comparativa">Teoria + Tabla comparativa</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#comandos">Comandos</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#cp">cp</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#rsync">rsync</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#dd">dd</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#automatizacion-con-scripts-y-cron-y-anacron">Automatización con scripts y cron y anacron</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#teoria">Teoria</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../Sprint3/">Sprint3</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../Sprint4/">Sprint4</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../Sprint5/">Sprint5</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Projecto FOG Hugo</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Sprint2</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="sprint-2">Sprint 2</h1>
+<h2 id="gestion-de-procesos">Gestión de procesos</h2>
+<p><strong>¿Que es un proceso?</strong> Un proceso es una instancia de un programa en ejecución en un sistema operativo. Es decir, cuando ejecutas un programa, el sistema operativo crea un proceso que representa ese programa mientras está funcionando.</p>
+<h3 id="top"><strong>TOP</strong></h3>
+<p>Es un comando que se utiliza para monitorear a tiempo real los <strong>procesos</strong> que se estan ejecutando en el sistema en ese momento.</p>
+<p><img alt="top" src="../Imagenes/Sprint2/top.png" /></p>
+<h3 id="pstree"><strong>pstree</strong></h3>
+<p>La comanda pstree muestra una representación en forma de árbol de los procesos que se están ejecutando en un sistema basado en Unix/Linux. </p>
+<p><img alt="pstree" src="../Imagenes/Sprint2/pstree.png" /></p>
+<h3 id="ps-aux"><strong>ps aux</strong></h3>
+<p>se utiliza para listar todos los procesos que se están ejecutando en el sistema, proporcionando información detallada sobre cada uno de ellos.</p>
+<p><img alt="psaux" src="../Imagenes/Sprint2/psaux.png" /></p>
+<h3 id="ctrlc">Ctrl+C</h3>
+<p>Ctrl + C se utiliza para interrumpir o detener un proceso en ejecución en la terminal. </p>
+<p><strong>Ejemplo:</strong></p>
+<p>Ejecutamos un Ping hacia una IP aleatoria, en mi caso utilizare la 8.8.8.8</p>
+<p><img alt="ctrl+c" src="../Imagenes/Sprint2/ping.png" /></p>
+<p>Para detener este proceso utilizaremos la combinacion de teclas <strong>Ctrl+C</strong> y se representara en la terminal de esta manera <strong>^C</strong>, esto hara que se detenga el proceso y por lo tanto se dejaran de mandar Pings.</p>
+<p><img alt="ctrl+c" src="../Imagenes/Sprint2/ctrl%2Bc.png" /></p>
+<h3 id="ctrlz">Ctrl+Z</h3>
+<p>Ctrl + Z se utiliza para suspender un proceso en ejecución y enviarlo al fondo, deteniéndolo temporalmente.</p>
+<p><strong>Ejemplo</strong></p>
+<p>Haremos el mismo ejemplo que en el caso anterior, le enviaremos un ping a la IP 8.8.8.8.</p>
+<p><img alt="ctrl+z" src="../Imagenes/Sprint2/ping2.png" /></p>
+<p>Para suspender el proceso y enviarlo a un segundo plano haremos <strong>Ctrl+Z</strong> y se representara en la terminal de esta manera <strong>^Z</strong> esto hara que se suspenda el proceso y se mande a un segundo plano.</p>
+<p><img alt="ctrl+z" src="../Imagenes/Sprint2/ctrl%2Bz.png" /></p>
+<h3 id="jobs">jobs</h3>
+<p>El comando jobs muestra una lista de los procesos asociados a la sesión actual de la terminal que están en segundo plano, suspendidos o en ejecución.  </p>
+<p><strong>Ejemplo</strong></p>
+<p>Suspendemos un proceso para poder hacer un ejemplo</p>
+<p><img alt="ctrl+z" src="../Imagenes/Sprint2/ctrl%2Bz.png" /></p>
+<p>Ahora ejecutamos la comanda <code>jobs</code> para ver los procesos suspendidos</p>
+<p><img alt="jobs" src="../Imagenes/Sprint2/jobs.png" /></p>
+<h3 id="fg">fg %</h3>
+<p>El comando fg % se utiliza para reanudar un trabajo suspendido o en segundo plano y traerlo al primer plano de la terminal, permitiéndote interactuar nuevamente con él.</p>
+<p><strong>Ejemplo</strong></p>
+<p>Vamos a traer nuevamente el ping que suspendimos anteriormente y pudimos verlo con el <code>jobs</code>.</p>
+<p><img alt="jobs" src="../Imagenes/Sprint2/jobs.png" /></p>
+<p>Para volverlo a traer al primer plano haremos <code>fg % numero_proceso</code> en este caso el numero "1".</p>
+<p><img alt="fg %" src="../Imagenes/Sprint2/fg%25.png" /></p>
+<h3 id="kill-9-pid">kill -9 PID</h3>
+<p>El comando kill -9 PID se utiliza para forzar la terminación de un proceso identificado por su PID (Process ID).</p>
+<p><strong>Ejemplo</strong></p>
+<p>Para ver los procesos que tenemos activos ahora mismo vamos a usar el comando <code>ps aux</code></p>
+<p><img alt="psaux" src="../Imagenes/Sprint2/psaux.png" /></p>
+<p>Y para deter alguno de los procesos que podemos ver en pantalla utilizaremos <code>kill -9 PID</code>.</p>
+<p><img alt="kill-9" src="../Imagenes/Sprint2/kill-9.png" /></p>
+<p>No sale ningun tipo de mensaje pero si volvemos a hacer <code>ps aux</code> podremos comprobar que ya no aparecera en la lista.</p>
+<h2 id="gestion-de-usuarios-grupos">Gestión de usuarios, grupos</h2>
+<h3 id="archivos-a-tener-en-cuenta">Archivos a tener en cuenta</h3>
+<h4 id="-passwd"><em>- PASSWD</em></h4>
+<p><strong>Ruta:</strong> <code>/etc/passwd</code></p>
+<p><strong>Extructura:</strong> nombre:contraseña(x):id_usuario(1xxx):grupo_principal(1xxx):nombre_completo:Direccion_Directorio</p>
+<p><strong>Funcionalidad:</strong>  Contiene la información básica de las cuentas de usuario del sistema. </p>
+<p><img alt="Passwd" src="../Imagenes/Sprint2/passwd.png" /></p>
+<h4 id="-group"><em>- GROUP</em></h4>
+<p><strong>Ruta:</strong> <code>/etc/group</code></p>
+<p><strong>Extructura:</strong> nombre;contraseña:identificador:(Mas usuarios si hay)</p>
+<p><strong>Funcionalidad:</strong> Contiene la información sobre los grupos definidos en el sistema. </p>
+<p><img alt="Group" src="../Imagenes/Sprint2/Group.png" /></p>
+<h4 id="-shadow"><em>- SHADOW</em></h4>
+<p><strong>Ruta:</strong> <code>/etc/shadow</code></p>
+<p><strong>Extructura:</strong> nombre_de_usuario:contraseña_cifrada:último_cambio:min:max:aviso:inactividad:expiración:</p>
+<p><strong>Funcionalidad:</strong> Almacena la información cifrada de las contraseñas de los usuarios, así como otros parámetros relacionados con la expiración y validez de las contraseñas.</p>
+<p><img alt="Shadow" src="../Imagenes/Sprint2/shadow.png" /></p>
+<h4 id="-gshadow"><em>- GSHADOW</em></h4>
+<p><strong>Ruta:</strong> <code>/etc/gshadow</code></p>
+<p><strong>Extructura:</strong> nombre_del_grupo:contraseña_cifrada:administradores:miembros</p>
+<p><strong>Funcionalidad:</strong> Se utiliza para almacenar información de los grupos, incluyendo las contraseñas cifradas de los grupos y los miembros de cada grupo con permisos especiales. </p>
+<p><img alt="Gshadow" src="../Imagenes/Sprint2/gshadow.png" /></p>
+<p><strong>SKEL</strong></p>
+<p><strong><em>Todos los archivos mencionados se encuentran dentro del skel, para poder verlos tendremos que hacer un <code>ls -la</code> ya que todo archivo que tenga un "." antes de su nombre estara oculto y no se vera con un simple ls</em></strong></p>
+<p><code>/etc/skel</code> -&gt; Carpetas que se crearan cuando un nuevo usuario abra la interfaz por primera vez</p>
+<p><img alt="profile" src="../Imagenes/Sprint2/profile.png" /></p>
+<p><strong>.profile</strong> -&gt; Este archivo se ejecuta cuando inicias sesión en un shell de login (por ejemplo, cuando accedes al sistema desde un terminal virtual o SSH).</p>
+<p><strong>Modificacion</strong> -&gt; En este caso indicamos que la carpeta de home del usuario en vez de crearse en el /home se crearan en el /var</p>
+<p><img alt="bashrc" src="../Imagenes/Sprint2/bashrc.png" /></p>
+<p><strong>.bashrc</strong> -&gt; Sirve para configurar cosas como alias, funciones, colores, y otras personalizaciones del shell.</p>
+<p><strong>Modificacion</strong> -&gt; En este caso estamos creando una modificación de un comando, cuando coloquemos "conexio" se hara un <code>ls -la</code></p>
+<p><img alt="bashlogout" src="../Imagenes/Sprint2/bash_logout.png" /></p>
+<p><strong>.bash_logout</strong> -&gt; Este archivo se ejecuta al cerrar sesión en un shell de login.</p>
+<p><strong>Modificacion</strong> -&gt; En este caso estamos haciendo que siempre que se deslogue se eliminara la carpeta de descargas de los usuarios que tengan la carpeta en /home</p>
+<p><strong>VARIABLE: $USER</strong> -&gt; actua únicament sobre l’usuari que es deslogea.</p>
+<h3 id="usuarios">Usuarios</h3>
+<h3 id="comandos-basicos">Comandos Basicos</h3>
+<h4 id="creacion-de-usuarios"><em>Creación de usuarios</em></h4>
+<p>Para crear usuarios tenemos 2 comandos los cuales podemos usar useradd y adduser.</p>
+<h5 id="useradd"><strong>useradd:</strong></h5>
+<ul>
+<li>Es un comando más básico y de bajo nivel.</li>
+<li>Forma parte de las herramientas de gestión de usuarios de Linux.</li>
+<li>No realiza pasos adicionales ni configura parámetros automáticamente. Por ejemplo, al usar useradd, hay que especificar manualmente la creación del directorio home, los grupos, la shell, y otras configuraciones si no se desea usar los valores predeterminados.</li>
+<li>Ideal para usuarios avanzados que necesitan personalizar cada aspecto de la cuenta.</li>
+</ul>
+<p><img alt="useradd" src="../Imagenes/Sprint2/useradd1.png" /></p>
+<p>Creamos su home con el comando <code>mkdir</code> y le entregamos el propietario con el comando <code>sudo chown</code>.</p>
+<p><img alt="Directorio_Permisos" src="../Imagenes/Sprint2/directorio_propietario.png" /></p>
+<p>Le añadimos una contraseña al usuario</p>
+<p><img alt="Contraseña" src="../Imagenes/Sprint2/contrase%C3%B1a.png" /></p>
+<p>Le asignamos el Shell predeterminado</p>
+<p><img alt="Shell" src="../Imagenes/Sprint2/Shell.png" /></p>
+<p>Comprobamos que se encuentre en los archivos y en la inteficie grafica:</p>
+<p><img alt="Comprobacion" src="../Imagenes/Sprint2/Comprobacion.png" /></p>
+<p><img alt="Interficie_Grafica" src="../Imagenes/Sprint2/Comprobacion2.png" /></p>
+<h5 id="adduser"><strong>adduser:</strong></h5>
+<ul>
+<li>Es un script de Perl que utiliza useradd internamente.</li>
+<li>Proporciona una interfaz más amigable y realiza varias configuraciones por defecto, como la creación automática del directorio home, la asignación de un grupo por defecto, y la solicitud de una contraseña durante el proceso.</li>
+<li>Es más sencillo y práctico para usuarios que quieren crear cuentas de usuario sin preocuparse por especificar cada parámetro.</li>
+</ul>
+<p><img alt="adduser" src="../Imagenes/Sprint2/adduser1.png" /></p>
+<p><strong>RESULTADOS:</strong></p>
+<p><img alt="Mostra_Usuaris" src="../Imagenes/Sprint2/Provausuaris.png" /></p>
+<h3 id="eliminar-usuarios"><em>Eliminar Usuarios</em></h3>
+<p>El comando <strong>deluser</strong> en sistemas Unix/Linux se utiliza para eliminar usuarios del sistema de manera sencilla.</p>
+<p>1 - <strong>Eliminar un usuario:</strong></p>
+<p>Si se ejecuta sin opciones adicionales, deluser elimina al usuario especificado del sistema, pero deja intactos los archivos del usuario, incluyendo su directorio home.</p>
+<p><code>deluser nombre_de_usuario</code></p>
+<p>2 - <strong>Eliminar un usuario y su directorio home:</strong></p>
+<p>Usando la opción --remove-home, deluser elimina al usuario junto con su directorio home y su contenido.</p>
+<p><code>deluser --remove-home hugo</code></p>
+<p>3 - <strong>Eliminar un usuario y sus archivos:</strong></p>
+<p>Con la opción --remove-all-files, deluser elimina todos los archivos de propiedad del usuario, independientemente de su ubicación en el sistema, además del directorio home.</p>
+<p><code>deluser --remove-all-files hugo</code></p>
+<p>4 - <strong>Eliminar un usuario de un grupo:</strong></p>
+<p>deluser también permite eliminar a un usuario de un grupo específico sin eliminar al usuario del sistema.</p>
+<p><code>deluser hugo sudo</code></p>
+<p>5 - <strong>Eliminar un grupo:</strong></p>
+<p>También se puede usar deluser para eliminar un grupo utilizando la opción --group.</p>
+<p><code>deluser --group grupo1</code></p>
+<h3 id="bloquear-usuarios"><em>Bloquear Usuarios</em></h3>
+<p><code>usermod -L &lt;nom&gt;</code></p>
+<p>cat /etc/shadow </p>
+<p>Comprovamos que delante del password aparece un "!" para verificar que se a bloqueado</p>
+<p><img alt="Bloqueada" src="../Imagenes/Sprint2/bloqueada.png" /></p>
+<p><code>man usermod</code> (opcions de usermod)</p>
+<p><code>usermod -U &lt;nom&gt;</code></p>
+<p>Desbloquea al usuario por lo tanto desaparece el '!' del /etc/shadow</p>
+<p><img alt="Bloqueada" src="../Imagenes/Sprint2/Desbloqueada.png" /></p>
+<h4 id="otros-comandos">Otros comandos</h4>
+<ul>
+<li>
+<p><code>usermod --shell /bin/bash &lt;nom&gt;</code> (para cambiar el interprete de 'sh' a 'bash')</p>
+</li>
+<li>
+<p><code>mkdir &lt;nom&gt;</code> (crea carpeta para un nuevo usuario)</p>
+</li>
+<li>
+<p><code>chown &lt;nom&gt;:&lt;nom&gt; &lt;nom&gt;</code> (1:usuari 2:grup 3:nom carpeta)</p>
+</li>
+<li>
+<p><code>passwd &lt;nom&gt;</code> (para configurar contraseña)</p>
+</li>
+<li>
+<p><code>usermod -p &lt;contrasenya&gt; &lt;nom&gt;</code> (contraseña con texto plano)</p>
+</li>
+<li>
+<p><code>addgroup &lt;nom&gt;</code> (crea un grupo con su id)</p>
+</li>
+<li><code>adduser &lt;nom&gt; &lt;nombre_grupo&gt;</code> (añade un usuario dentro de un grupo)</li>
+</ul>
+<h5 id="gpasswd">GPASSWD</h5>
+<ul>
+<li>
+<p><code>gpasswd -a &lt;nom&gt; &lt;nombre_grupo&gt;</code> (añade un usuario a grup)</p>
+</li>
+<li>
+<p><code>gpasswd -A &lt;nom&gt; &lt;nombre_grupo&gt;</code> (hace que un usuario sea admin de un grupo)</p>
+</li>
+</ul>
+<h5 id="usermod">USERMOD</h5>
+<ul>
+<li>
+<p><code>usermod -a -G &lt;nomg&gt; &lt;nom&gt;</code>(añade un usuario a un grupo y con la '-a' no elige el usuario de otros grupos)</p>
+</li>
+<li>
+<p><code>usermod  -G &lt;nombre_grupo&gt; &lt;nombre&gt;</code> (cambia el grupo principal del usuario)</p>
+</li>
+<li>
+<p><code>groupmod -n &lt;Nuevo_nombre_grupo&gt; &lt;nombre_grupo&gt;</code> (cambia el nombre del grupo)</p>
+</li>
+</ul>
+<h3 id="modificaciones-crear-usuarios">Modificaciones crear usuarios</h3>
+<p>Los archivos que vamos a modificar en esta parte y los importantes son:</p>
+<ul>
+<li>
+<p>/etc/login.defs -&gt; modifica los parametros a la hora de crear usuarios en general.</p>
+</li>
+<li>
+<p>/etc/adduser.conf -&gt; Modifica parametros al usar el comando adduser.</p>
+</li>
+<li>
+<p>/etc/default/useradd -&gt; Modifica parametros al usar el comando useradd.</p>
+</li>
+<li>
+<p>/etc/skell -&gt; Todo lo que se cree dentro de esta carpeta se copiara en las homes de cada usuario creado</p>
+</li>
+</ul>
+<h4 id="configuracion-skell">Configuracion Skell</h4>
+<p>En el Skell si haces un <strong>ls -la</strong> te saldran muchos archivos los cuales estan ocultos y ya explique anteriormente para que servian, en este caso lo que nos va a interesar es crear un enlace para comprovar si se crea en los nuevos usuarios.</p>
+<p><img alt="Skell" src="../Imagenes/Sprint2/etcskel.png" /></p>
+<h4 id="configuracion-logindefs">Configuración login.defs</h4>
+<p>Como mencione anteriormente este archivo modifica los parametros defaults a la hora de crear un usuario.</p>
+<p><img alt="login.defs" src="../Imagenes/Sprint2/modificaciones%20login.defs.png" /></p>
+<p>En este caso los parametros que se modificaron son</p>
+<ul>
+<li>
+<p><strong>UID_MIN 2000</strong> -&gt; Esto hara que su numero de usuario sea minimo 2000 de manera default seria 1000</p>
+</li>
+<li>
+<p><strong>GID_MIN 2000</strong> -&gt; Esto hara que el numero de grupo sea minimo 2000 de manera default seria 1000</p>
+</li>
+</ul>
+<p><img alt="Login.defs2" src="../Imagenes/Sprint2/login.defs2.png" /></p>
+<p>Tambien se modifico este apartado del mismo archivo el cual hara cambios con la contraseña.</p>
+<ul>
+<li><strong>PASS_MAX_DAYS 30</strong> -&gt; Esto hara que la misma contraseña solo se podra tener durante 30 dias, despues se tendra que cambiar</li>
+<li><strong>PASS_MIN_DAYS 5</strong> -&gt; Esto hara que tienen que pasar minimo 5 dias entre cambio y cambio de contraseña</li>
+<li><strong>PASS_WARN_AGE 10</strong> -&gt; Esto hara que te avise 10 dias antes de que te caduque la contraseña.</li>
+</ul>
+<h4 id="configuracion-adduserconf">Configuración adduser.conf</h4>
+<p>Todo lo que se toque en este archivo cambiara los parametros a la hora de crear un usuario con el comando <code>adduser</code>. Todo lo que se ponga en este archivo prevalece sobre lo que se ponga en el archivo login.defs.</p>
+<p><img alt="Config_adduser" src="../Imagenes/Sprint2/modificaciones%20adduser.png" /></p>
+<p>En este archivo se modificaron los siguientes parametros:</p>
+<ul>
+<li><strong>DHOME=/tmp</strong> -&gt; Esto hara que las carpetas "home" de los usuarios no se crearan en la carpeta "HOME" sino en la ruta que tu le pongas en este caso en "/tmp"</li>
+<li><strong>FIRST_UID=2000</strong> -&gt; Esto hara que su numero de usuario sea minimo 2000 de manera default seria 1000</li>
+<li><strong>FIRST_GID=2000</strong> -&gt; Esto hara que el numero de grupo sea minimo 2000 de manera default seria 1000</li>
+</ul>
+<h6 id="comprobaciones">Comprobaciones</h6>
+<p><img alt="Demostración" src="../Imagenes/Sprint2/Comprobaciones%20adduser.png" /></p>
+<h4 id="configuracion-useradd">Configuración useradd</h4>
+<p>Todo lo que se toque en este archivo cambiara los parametros a la hora de crear un usuario con el comando <code>useradd</code></p>
+<p><img alt="modificacion_useradd" src="../Imagenes/Sprint2/modificaciones%20useradd.png" /></p>
+<p>En este archivo viene todo siempre completamente comentado ya que nunca te pide especificaciones a la hora de crear un usuario ya que lo tienes que hacer manualmente.</p>
+<p>Lo unico que se descomento es el paraemtro:
+- <strong>SHELL=/bin/bash</strong> -&gt; Esto determina el SHELL de cada usuario creado con useradd en este caso seria /bin/bash.</p>
+<p><img alt="Comprobaciones" src="../Imagenes/Sprint2/Comprobacion%20useradd.png" /></p>
+<p>Igualmente las modificaciones que se seguirian en la creación de un usuario con useradd serian las indicadas en el archivo <code>login.defs</code></p>
+<h2 id="permisos">Permisos</h2>
+<h4 id="taula-permisos-decimal">Taula Permisos Decimal</h4>
+<p><img alt="Taula" src="../Imagenes/Sprint2/Taula%20permisos.png" /></p>
+<h4 id="permisos-normals">Permisos Normals</h4>
+<p><strong>PRUEBAS</strong>
+Para hacer las pruebas creamos un grupo y usuarios, añadimos a 2 de los usuarios creados dentro del grupo en este caso se llama “parchis”</p>
+<p>Metemos 2 usuarios al grupo:
+<img alt="Grupo" src="../Imagenes/Sprint2/1.%20Creaci%C3%B3_Grup.png" /></p>
+<p><strong>chgrp</strong>
+Creamos la carpeta “prova” con un archivo en el interior llamado “hola” y le modificamos los permisos añadiendo al grupo parchis.
+<img alt="chgrp" src="../Imagenes/Sprint2/2.%20Crear_Carpeta.png" /></p>
+<p>Añadimos al grupo como propietario:
+<img alt="chgrp_proves" src="../Imagenes/Sprint2/3.%20chgrp_proves.png" />
+El comando que utilizamos es <code>chgrp</code></p>
+<p><strong>Estructura:</strong> <code>chgrp [Parametre] [Grup] [Directori/archiu]</code></p>
+<p>En nuestro caso utilizamos <strong>“-R”</strong> esto hara que sea recursivo, es decir que todo lo que haya en el interior de la carpeta tambien se le aplicaran los permisos.</p>
+<p><strong>CHMOD</strong>
+Ahora cambiamos los permisos tambien para el resto de grupos/usuarios/</p>
+<p><img alt="chmod" src="../Imagenes/Sprint2/4.%20chmod.png" /></p>
+<p><strong>Orden:</strong> Usuario-Grupo-Others</p>
+<p><strong>Estructura:</strong> <code>chmod [Parámetro] [Permisos que quieres otorgar] [Carpeta]</code></p>
+<p>En nuestro caso utilizamos <strong>“-R”</strong> esto hará que sea recursivo, es decir que todo lo que haya en el interior de la carpeta también se le aplicarán los permisos.</p>
+<p><strong>PRUEBAS GROC (Permisos Ususari)</strong></p>
+<p><img alt="Prueba1" src="../Imagenes/Sprint2/5.%20comprobaci%C3%B3n%20chmod.png" /></p>
+<p><img alt="Prueba" src="../Imagenes/Sprint2/7.%20Comprobaciones%20propietari.png" /></p>
+<p>Podemos comprobar que con la configuración que le hemos dado GROC al tener permisos de usuario puede hacer lo que sea dentro de la carpeta.</p>
+<p><strong>PRUEBAS VERDE (Permisos Grup)</strong></p>
+<p><img alt="Prueba2" src="../Imagenes/Sprint2/6.%20Comprobacion%20permisos%20chmod-chgrp-grup.png" /></p>
+<p>Podemos ver que “Verd” ya que tiene los permisos de grupo únicamente podrá entrar y ver el contenido del interior del directorio, pero no podrá modificar nada de su interior ni ver el contenido de los archivos del interior.</p>
+<p><strong>PRUEBA ROIG (permisos Others)</strong></p>
+<p><img alt="Prueba3" src="../Imagenes/Sprint2/8.%20Comprobaciones%20Others.png" /></p>
+<p>Podemos ver que “Roig” ya que tiene los permisos de Others no podrá ni acceder ni modificar el interior del directorio,</p>
+<h4 id="permisos-especials">Permisos Especials</h4>
+<p>Para comprobar los permisos especiales utilizaremos una carpeta llamada Compartida, queremos que en esta carpeta todos los usuarios dentro del grupo de parchís puedan subir sus archivos y ver el interior pero no pueda eliminar los archivos del resto.</p>
+<p><strong>Creamos la carpeta</strong></p>
+<p><img alt="Carpeta" src="../Imagenes/Sprint2/Crear%20Carpeta.png" /></p>
+<p><strong>Sticky:</strong></p>
+<p>Utilizaremos el chmod, le añadiremos unos permisos normales “757” pero le colocaremos un “1” delante, esto hace que se le apliquen todos los permisos al grupo de Others pero no puedan eliminar documentos de otros usuarios.</p>
+<p><img alt="Sticky" src="../Imagenes/Sprint2/utilizaci%C3%B3n%20Sticky.png" /></p>
+<p><strong>Comprobaciones:</strong></p>
+<p>Creo 2 carpetas con el usuario “Roig” para comprobar que puede crear archivos en el interior de la carpeta, seguidamente compruebo que el puede eliminar sus propios archivos.</p>
+<p><img alt="ComprobacionRoig" src="../Imagenes/Sprint2/Comprobaciones_rojo.png" /></p>
+<p>Ahora cambio al usuario “Blau” y compruebo que puede crear sus archivos y que no puede eliminar los de Roig.</p>
+<p><img alt="ComprobacionBlau" src="../Imagenes/Sprint2/comprobaciones_blau" /></p>
+<h4 id="llista-de-control-dacces">Llista de control d'acces</h4>
+<p>Para crear la lisa de controles utilizaremos el comando:</p>
+<p><code>getfacl [Nombre archivo]</code></p>
+<p>El comando getfacl en Linux se utiliza para mostrar las Listas de Control de Acceso (ACL) de archivos y directorios.</p>
+<p><strong>setfacl</strong></p>
+<p>Este comando nos servirá para hacer excepciones sobre carpetas a usuarios en concreto o grupos en concreto</p>
+<p><img alt="setfacl" src="../Imagenes/Sprint2/setfacl.png" /></p>
+<p>Estructura: <code>setfacl -m [user/group]:[usuari/grup]:[permisos] (nom carpeta)</code></p>
+<p><strong>Comprobaciones</strong></p>
+<p><img alt="Comprobacionessetfcl" src="../Imagenes/Sprint2/comprobaciones%20setfacl.png" /></p>
+<p><strong>Otros parametros</strong></p>
+<p><code>setfacl -b (archivo)</code> → Sirve para eliminar todas las excepciones que esten en un archivo/directorio</p>
+<p><img alt="Comprobacionessetfcl-b" src="../Imagenes/Sprint2/setfacl%20-b.png" /></p>
+<p><code>setfacl -x (usuario) (directorio)</code> → Sirve para eliminar las excepciones de 1 usuario en concreto sobre 1 directorio.</p>
+<p><img alt="Comprobacionessetfcl" src="../Imagenes/Sprint2/comprobaciones%20setfacl.png" /></p>
+<p><img alt="Comprobacionessetfcl-x" src="../Imagenes/Sprint2/setfacl%20-x.png" /></p>
+<h4 id="permisos-umask">Permisos umask</h4>
+<p><code>umask</code> -&gt; comprobar la máscara que tienes</p>
+<p><img alt="umask" src="../Imagenes/Sprint2/umask_normal_permisos.png" /></p>
+<p><strong>La mascara 022</strong> = máscara del <strong>root</strong></p>
+<p><code>umask (numero)</code> -&gt; Te cambia la máscara al numero que tu le asigne</p>
+<p><img alt="umaskcambiado" src="../Imagenes/Sprint2/umaskcambiado.png" /></p>
+<ul>
+<li>Dependiendo el número de mascaras indicará los permisos que se le otorgaran a los directorios y archivos.</li>
+</ul>
+<p><strong>Para calcular la mascara:</strong></p>
+<p>Para calcular los permisos que dará una máscara hay que hacer la operación ahn con números binarios entre los permisos que se otorgan de manera default en el SO en el caso de los directorios (777) y en el caso de los archivos (640), seguidamente tienes que pasar a binario la máscara que tengas en nuestro caso 002 despues hacerla a la inversa es decir los 0-&gt;1 y 1-&gt;0, después al realizar el cálculo ahn hay que volver a invertir la máscara que nos dará es decir los 0-&gt;1 y 1-&gt;0, seguidamente pasamos nuevamente de binario a decimal y esa sera la máscara que tendremos que usar.</p>
+<p><img alt="calcularumask" src="../Imagenes/Sprint2/calcularumask.png" /></p>
+<p><strong>Modificar umask para nuevos usuarios:</strong></p>
+<p>Usaremos el archivo <code>/etc/login.defs</code> </p>
+<p><img alt="cambiarumasknuevos" src="../Imagenes/Sprint2/cambiarumasktodos.png" /></p>
+<p>Modificaremos el parámetro <strong>UMASK -&gt; 022</strong> al número que nosotros queramos.</p>
+<p><img alt="Modificacion" src="../Imagenes/Sprint2/cambiado.png" /></p>
+<p>Creamos el nuevo usuario para comprobar que se a cambiado:</p>
+<p><img alt="usuarionuevo" src="../Imagenes/Sprint2/usuarioumask.png" /></p>
+<p><img alt="umasknueva" src="../Imagenes/Sprint2/umasknuevo.png" /></p>
+<h2 id="sistemes-de-fitxers-i-particions">Sistemes de fitxers i particions</h2>
+<h3 id="comandes">COMANDES:</h3>
+<p><code>fdisk -l</code>-&gt; Da información sobre los discos del sistema operativo.
+<img alt="fdisk" src="../Imagenes/Sprint2/fdisk.png" /></p>
+<p><code>tune2fs -l (partició)</code>-&gt; Sabremos la mida del Block que tiene servida la partición.
+<img alt="tune2fs" src="../Imagenes/Sprint2/tune2fs.png" /></p>
+<p><code>df -T</code> -&gt; Sirve para ver todas las particiones que tenemos y el sistema de archivos y mas información.
+<img alt="df -T" src="../Imagenes/Sprint2/df.png" /></p>
+<p><code>du -sh (archivo)</code> -&gt; Sirve para obtener información sobre el tamaño de un archivo o directorio en un formato más fácil de leer para las personas.
+<img alt="du" src="../Imagenes/Sprint2/du-sh.png" /></p>
+<p><code>e4defrag -c (partición)</code> -&gt; Es un desfragmentador de Linux, con el parámetro “-c” únicamente dará información necesaria para saber si tenemos que desfragmentar el disco.</p>
+<p><img alt="e4defrag" src="../Imagenes/Sprint2/e4info.png" /></p>
+<p><code>e4defrag (partición)</code> -&gt; Sirve para comenzar a desfragmentar </p>
+<p><img alt="e4defragejec" src="../Imagenes/Sprint2/e4ejecucion.png" /></p>
+<h3 id="estructura-de-la-informacio">Estructura de la informació:</h3>
+<h4 id="mida-sector-y-block">Mida sector y block:</h4>
+<p>El sector es la unidad mínima física donde se guardan los datos y por defecto son 512 bytes y el sistema operativa no trabaja en sectores trabaja en blocks y los blocks es la unidad mínima lógica donde se guardan los datos por defecto. El tamaño del sector no se puede cambiar viene definida de fábrica, pero el tamaño del block si que se puede cambiar cuando formateamos la partición.</p>
+<h4 id="fragmentacio-interna">Fragmentació interna:</h4>
+<p>La fragmentación interna es toda esa parte desaprovechada de los blocks porque no se acaban de llenar.</p>
+<p>La fragmentación interna se puede solucionar disminuyendo o aumentando la medida del block pero siempre hay que tener en cuenta que bajará el rendimiento ya que los archivos estarán más fraccionados</p>
+<h4 id="fragmentacio-externa">Fragmentació externa:</h4>
+<p>La fragmentación externa cunado baja el rendimiento del sistema porque los archivos no se guardan en bloques continuos en la memoria, lo arreglamos con la desfragmentación.</p>
+<h2 id="creacion-de-particiones-y-formatear">Creación de particiones y formatear</h2>
+<h3 id="tipo-de-formateo">Tipo de formateo</h3>
+<ul>
+<li>
+<p><strong>Bajo nivel (lento)</strong>
+Realiza una operación de bajo nivel en el disco que organiza físicamente los sectores y las pistas. Básicamente prepara el medio de almacenamiento (generalmente discos magnéticos) para poder guardar datos desde cero. Se asignan los sectores físicos del disco y se marcan las áreas defectuosas</p>
+</li>
+<li>
+<p><strong>Entre Medio</strong>
+Elimina toda la información lógica del disco, crea un sistema de archivos nuevo (FAT, NTFS, ext4, etc.) y revisa el disco en busca de errores (con un escaneo superficial). Este proceso sobrescribe los datos existentes y hace que parezca un disco nuevo a nivel lógico.</p>
+</li>
+<li>
+<p><strong>Rapido</strong>
+Borra solo la tabla de asignación de archivos (o su equivalente según el sistema de archivos), lo que significa que los archivos existentes no se eliminan físicamente, pero el sistema operativo “piensa” que el espacio está vacío y puede escribir sobre él. Es un proceso mucho más rápido porque no escanea ni sobrescribe sectores.</p>
+</li>
+</ul>
+<h3 id="practica">Practica</h3>
+<p>Creamos un nuevo disco en el Virtual box para poder trabajar con el para hacer la practica.</p>
+<p><img alt="Disco" src="../Imagenes/Sprint2/Nuevo%20Disco%20VB.png" /></p>
+<p>Entramos dentro de la maquina virtual e introducimos el siguiente comando para meternos dentro del disco</p>
+<p><img alt="dev" src="../Imagenes/Sprint2/devsdb.png" /></p>
+<p>Colocaremos <code>n</code> para crear particiones dentro del disco seleccionado.</p>
+<p><img alt="n" src="../Imagenes/Sprint2/sdb%20n.png" /></p>
+<p>Nos da como recomendación que sea predeterminada y con valor 1 asi que presionamos intro.</p>
+<p><img alt="sbdp" src="../Imagenes/Sprint2/sdbpredeterminada.png" /></p>
+<p>Le indicamos el tamaño de la partición y salimos</p>
+<p><img alt="particion" src="../Imagenes/Sprint2/tama%C3%B1opart.png" /></p>
+<p>Una vez acabamos colocamos W para salir</p>
+<p><img alt="salir" src="../Imagenes/Sprint2/sdb%20w.png" /></p>
+<h5 id="comprobacion">Comprobacion</h5>
+<p>Colocamos fdisk -l para comprobar la lista de los discos y vemos la particion.</p>
+<p><img alt="Comprobacion" src="../Imagenes/Sprint2/comprobacion%20part.png" /></p>
+<h5 id="formatear">Formatear</h5>
+<p>Formateamos la particion y modificamos el tamaño del bloque</p>
+<p><code>mkfs.ext4 -b (modificacion del tamaño) (disco)</code></p>
+<p><img alt="mfks" src="../Imagenes/Sprint2/mkfs.ext4.png" /></p>
+<p>Comprobación del formateo</p>
+<p><img alt="comprobacion" src="../Imagenes/Sprint2/comprobacion%20formateo.png" /></p>
+<h4 id="montaje-particiones">Montaje particiones</h4>
+<h5 id="temporal">Temporal</h5>
+<p>Primero creamos una carpeta en /var/ y dentro le ponemos un archivo en este  caso un txt.</p>
+<p><img alt="crearcarpeta" src="../Imagenes/Sprint2/crear%20carpeta.png" /></p>
+<p><code>mount -t (extension) (disco) (carpeta para montar la partición)</code>
+<img alt="mount-t" src="../Imagenes/Sprint2/mount%20-t.png" /></p>
+<p>Una vez montada la partición aparecera</p>
+<p><img alt="ls" src="../Imagenes/Sprint2/ls%20partcreada.png" /></p>
+<p>Podemos comprobar que desaparece el archivo “hola” del interior de la carpeta de “particio1”, el archivo no se a perdido pero al montar una partición simplemente no aparece, podemos hacer la comprobación desmontando con <code>umount /dev/sdb1</code></p>
+<p><img alt="unmount" src="../Imagenes/Sprint2/desmontar%20part.png" /></p>
+<p><img alt="lsborrada" src="../Imagenes/Sprint2/ls%20part%20borrada.png" /></p>
+<p>Creamos un nuevo archivo en el interior con la particion creada</p>
+<p><img alt="adeu" src="../Imagenes/Sprint2/touch%20adeu.png" /></p>
+<p>Al hacer un <strong>“REBOOT”</strong> se perderá la partición ya que es una partición temporal.</p>
+<h5 id="definitiva">Definitiva</h5>
+<p>Modificaremos el archivo fstab situado en /etc.</p>
+<p><code>/etc/fstab/</code> -&gt; Sirve para crear particiones definitivas dentro del sistema operativo </p>
+<p><img alt="fstab" src="../Imagenes/Sprint2/fstab.png" /></p>
+<p>Reiniciamos la maquina y para comprobar que se a hecho correctamente la partición hacemos un ls de la carpeta donde se a creado la particion en este caso /var/particio1 y debería estar dentro el archivo “adeu” que creamos anteriormente dentro de la misma partición.</p>
+<p><img alt="comprobacion" src="../Imagenes/Sprint2/comprobamos%20particion.png" /></p>
+<h4 id="comparticion-de-carpeta">Compartición de carpeta</h4>
+<h5 id="nautilus">Nautilus</h5>
+<p>Instalamos la aplicacion nautilus</p>
+<p><img alt="nautilus" src="../Imagenes/Sprint2/instalamos%20nautilus.png" /></p>
+<p>Compartimos la carpeta con la nueva opción que nos aparecerá.</p>
+<p><img alt="interfaz" src="../Imagenes/Sprint2/compartir%20por%20interfaz.png" /></p>
+<p><img alt="primererror" src="../Imagenes/Sprint2/primer%20error.png" /></p>
+<p><img alt="segundoerror" src="../Imagenes/Sprint2/segundo%20error.png" /></p>
+<p>Podemos comprobar que este método no funciona por lo que lo haremos con un servidor SAMBA.</p>
+<h5 id="samba">SAMBA</h5>
+<p>Instalamos el Samba con “sudo apt install samba”</p>
+<p><img alt="samba" src="../Imagenes/Sprint2/instalar%20samba.png" /></p>
+<p>Creamos la partición en el archivo smb.conf situado en <code>/etc/samba/smb.conf</code></p>
+<p><img alt="smbconf" src="../Imagenes/Sprint2/smb.conf.png" /></p>
+<p>Una vez modificado tenemos que hacer un <code>systemctl restart</code> a <code>smbd</code> y <code>nmbd</code></p>
+<p><img alt="systemctlrestart" src="../Imagenes/Sprint2/systemctl%20restart.png" /></p>
+<p>Ahora cambiamos los permisos para que todos tengan permisos sobre la carpeta particio1 y le cambiamos el grupo y el ususario propietario a nobody y nogroup</p>
+<p><img alt="permisospropietarios" src="../Imagenes/Sprint2/permisos%20propietarios.png" /></p>
+<p><img alt="ls-l" src="../Imagenes/Sprint2/ls%20-l%20particio.png" /></p>
+<p>Creamos el usuario platano ya que es el que colocamos al crear la particion utilizando el comando <code>“adduser”</code></p>
+<p><img alt="platano" src="../Imagenes/Sprint2/crear%20platano.png" /></p>
+<p>Utilizamos el comando <code>smbpasswd -a</code> para cambiar la contraseña de un usuario al servidor samba</p>
+<p><img alt="smbpasswd" src="../Imagenes/Sprint2/smbpasswd.png" /></p>
+<p>ahora en la MAQUINA CLIENTE (fuera de la maquina virtual) ponemos el comando “smbclient -L //(IP)” así podremos ver los recursos compartidos de la IP que coloquemos</p>
+<p><img alt="smbclient" src="../Imagenes/Sprint2/smbclient%20-L.png" /></p>
+<p>Vamos a las carpetas de la MAQUINA CLIENTE y tratamos de conectarnos en la opcion de abajo a la izquierda</p>
+<p><img alt="ConexionCliente" src="../Imagenes/Sprint2/Connexion%20clinet.png" /></p>
+<p>Ponemos las credenciales del usuario</p>
+<p><img alt="credenciales" src="../Imagenes/Sprint2/credenciales.png" /></p>
+<p>Creamos una carpeta desde la MAQUINA CLIENTE en la unidad compartida</p>
+<p><img alt="Crearcarpeta" src="../Imagenes/Sprint2/crear%20carpetaaaa.png" /></p>
+<p>Y la comprobamos desde la MAQUINA SERVIDOR (Máquina virtual) que está en la unidad compartida y de que la ha creado plátano.</p>
+<p><img alt="Comprobacioneservidor" src="../Imagenes/Sprint2/comprobacion%20servidor.png" /></p>
+<h2 id="quotes-de-disc">Quotes de disc</h2>
+<p>Identificamos el disco de 2GB que hemos creado con <code>fdisk -l</code></p>
+<p><img alt="fdisk-l" src="../Imagenes/Sprint2/fdisk-l.png" /></p>
+<p>Entramos dentro del fdisk (disco) y creamos la partición</p>
+<p><img alt="particion" src="../Imagenes/Sprint2/particion.png" /></p>
+<p>Formateamos la partición con <code>mkfs.ext4</code> (disco+partición)</p>
+<p><img alt="mkfs.ext4" src="../Imagenes/Sprint2/mkfs.ext42.png" /></p>
+<p>Modificamos el archivo <code>/etc/fstab</code> y creamos una partición definitiva y le añadimos cuotas</p>
+<p><img alt="/etc/fstab" src="../Imagenes/Sprint2/etcfstabbb.png" /></p>
+<h2 id="copies-de-seguretat-i-automatitzacio-de-tasques">Còpies de seguretat i automatització de tasques</h2>
+<p>Para las pruebas sera necesario crear 2 discos duros de 1 GB</p>
+<p><img alt="Discos" src="../Imagenes/Sprint2/1.%20Creacion%20disco%20duro.png" /></p>
+<h3 id="teoria-tabla-comparativa">Teoria + Tabla comparativa</h3>
+<p><strong>Que es una copia de seguridad:</strong> Una copia de seguridad, también conocida como backup, es una duplicación de datos que se realiza con el objetivo de protegerlos y garantizar su recuperación en caso de pérdida, daño o eliminación accidental. Estas copias permiten restaurar información valiosa, ya sea en entornos personales, empresariales o de sistemas críticos.</p>
+<p><strong>Completes:</strong>
+- Duplica todos los datos seleccionados.
+- <em>Ventaja</em>: Es una copia completa y fácil de restaurar.
+- <em>Inconveniente</em>: Consume mucho tiempo y espacio.</p>
+<p><strong>Diferenciales:</strong>
+Copia todos los cambios realizados desde la última copia completa.
+<em>Ventaja</em>: Es más rápida que la completa, y la restauración es más sencilla que con incrementales.
+<em>Inconveniente</em>: Ocupa más espacio que la incremental con el tiempo</p>
+<p><strong>Incrementales:</strong>
+Copia solo los cambios realizados desde la última copia (completa o incremental).
+<em>Ventaja</em>: Menor uso de espacio y tiempo.
+<em>Inconveniente</em>: La restauración puede ser más compleja, ya que depende de varias copias.</p>
+<p>En caso de perder información de algún back-up tendríamos que coger la última copia de seguridad completa hecha.</p>
+<p><strong>Politica de copias de seguridad:</strong> Las políticas de copias de seguridad son un conjunto de directrices, normas y procedimientos que una organización (o un individuo) establece para garantizar que los datos sean respaldados de manera consistente, segura y eficiente. Estas políticas son fundamentales para proteger la información crítica y garantizar la continuidad operativa en caso de desastres o pérdidas de datos.</p>
+<h3 id="comandos">Comandos</h3>
+<p><code>cp</code> = Copia simple no inteligente, lo copia todo sin mirar nada. Solo se puede utilizar en local.</p>
+<p><code>rsync</code> = Es una copia inteligente, solo copia los archivos modificados. También se puede utilizar entre máquinas remotas vía SSH</p>
+<p><code>dd</code> = No es un comando para hacer copias de archivos, es un comando para hacer copias de discos o particiones. No es inteligente, copia todo sin mirar. También sirve para copiar de sector a sector.</p>
+<h4 id="cp">cp</h4>
+<p><code>ls /home/hugo/Documents/</code> -&gt; Comprobamos lo que hay en el interior de la carpeta</p>
+<p><img alt="lscp" src="../Imagenes/Sprint2/2.%20lshomecp.png" /></p>
+<p><code>ls /var/copies/</code> -&gt; Comprobamos el interior de la carpeta pruebas </p>
+<p><img alt="lsvarcp" src="../Imagenes/Sprint2/3.%20lsvarcp.png" /></p>
+<p><code>cp -R /home/hugo/Documents/* /var/copies/</code> -&gt; hacemos una copia de todo el interior de  Documentos a Copias</p>
+<p><img alt="cp-r" src="../Imagenes/Sprint2/4.%20cp-R.png" /></p>
+<p><code>ls /var/copies*</code> -&gt; comprobamos el interior de copias nuevamente para comprobar que todo se a copiado bien</p>
+<p><img alt="ls2cp" src="../Imagenes/Sprint2/5.%20lsvarcp2.png" /></p>
+<h4 id="rsync">rsync</h4>
+<p><code>touch /home/hugo/Documents/hhhhh</code> -&gt; Creamos un nuevo documento en el interior de la carpeta documentos</p>
+<p><code>mkdir tttt</code> -&gt; Creamos una carpeta nueva</p>
+<p><code>rm -r prova2</code> -&gt; Eliminamos prova2</p>
+<p><img alt="rm" src="../Imagenes/Sprint2/6.%20rsync1.png" /></p>
+<p><code>rsync -av –delete /home/hugo/Documentos/ /var/sdb1</code>-&gt; Hacemos un rsync que es la copia inteligente indicando que elimine todas las carpetas que hemos eliminado en el documento</p>
+<p><img alt="rsync2" src="../Imagenes/Sprint2/7.%20rsync2.png" /></p>
+<h4 id="dd">dd</h4>
+<p><code>dd if=/dev/sdb1 of=/dev/sdc1 bs=4M status=progress</code></p>
+<p><strong><em>if=/dev/sdb1:</em></strong></p>
+<ul>
+<li>
+<p><code>if</code> significa "input file" (archivo de entrada).</p>
+</li>
+<li>
+<p>En este caso, <code>/dev/sdb1</code> es la partición o dispositivo de origen del que se copiarán los datos.</p>
+</li>
+<li>
+<p>Representa una partición en el disco físico <code>/dev/sdb</code>.</p>
+</li>
+</ul>
+<p><strong><em>of=/dev/sdc1:</em></strong></p>
+<ul>
+<li>
+<p><code>of</code> significa "output file" (archivo de salida).</p>
+</li>
+<li>
+<p>En este caso, <code>/dev/sdc1</code> es la partición o dispositivo de destino donde se escribirán los datos.</p>
+</li>
+<li>
+<p>Representa una partición en el disco físico <code>/dev/sdc</code>.</p>
+</li>
+</ul>
+<p><strong><em>bs=4M:</em></strong></p>
+<ul>
+<li>
+<p><code>bs</code> significa "block size" (tamaño de bloque).</p>
+</li>
+<li>
+<p>Define el tamaño de los bloques de datos que se copiarán de una sola vez.</p>
+</li>
+<li>
+<p>En este caso, el tamaño de bloque es de <strong>4 megabytes (4M)</strong></p>
+</li>
+</ul>
+<p><strong><em>status=progress:</em></strong></p>
+<ul>
+<li>
+<p>Este parámetro muestra el progreso del comando mientras se ejecuta.</p>
+</li>
+<li>
+<p>Sin este parámetro, el comando dd no muestra información durante el proceso, y parece que no está haciendo nada hasta que termina.</p>
+</li>
+</ul>
+<p><img alt="dd1" src="../Imagenes/Sprint2/8.%20dd1.png" /></p>
+<p><code>md5sum /dev/sdb1 /dev/sdc1</code></p>
+<p><img alt="dd2" src="../Imagenes/Sprint2/9.%20dd2.png" /></p>
+<p>Al tener un tamaño de 4M hay riesgo de que haya un error y a lo mejor no sale el mismo hash lo que quiere decir que no se ha copiado exactamente.</p>
+<p>Ponemos el mismo comando reduciendo el tamaño para que sea mas exacto</p>
+<p><img alt="dd3" src="../Imagenes/Sprint2/10.%20dd3.png" /></p>
+<p>Volvemos a sacar los hash de ambos archivos y comprobamos que tienen exactamente el mismo.</p>
+<p><img alt="dd4" src="../Imagenes/Sprint2/11.%20dd4.png" /></p>
+<p><em>Esto se aclara porque en clase dio problemas a algunos compañeros pese a que a mi me funcionase bien.</em></p>
+<h3 id="automatizacion-con-scripts-y-cron-y-anacron">Automatización con scripts y cron y anacron</h3>
+<h4 id="teoria">Teoria</h4>
+<p>Tanto cron como anacron sirven para automatizar tareas en un sistema operativo de ubuntu, anteriormente funcionaban por separado pero ahora están integrados los 2 juntos.</p>
+<p><strong>¿Cuándo utilizamos cada uno?</strong></p>
+<p>Si los ordenadores pueden estar apagados mejor anacron, porque el cron solo se ejecuta cuando el ordenador está encendido en cambio el anacron cuando se tenga que ejecutar una tarea y el ordenador esté apagado cuando este se enciende comprueba si tiene alguna tarea pendiente y se ejecuta.</p>
+<p>También utilizaremos anacron cuando sea para tareas más generales y de mantenimiento a nivel de sistema operativo, en cambio utilizaremos el cron cuando interesa más que se ejecute algo concretamente en una hora fija en una fecha determinada y para un usuario en concreto, es mejor.</p>
+<p>Utilizaremos el archivo “<code>/etc/crontab</code>” cuando queramos ejecutar algo globalmente para todos los usuarios cuando interesa un usuario específico ejecutaremos el comando “<code>crontab -e -u usuario</code>” dentro del directorio “<code>/etc</code>” tenemos unas carpetas predeterminadas para el cron para poner scripts que queremos que se ejecuten diariamente, mensualmente, anualmente ya están preparadas</p>
+<p>Estas son todas las carpetas que hay en etc del cron.</p>
+<p><img alt="script" src="../Imagenes/Sprint2/12.%20cron.png" /></p>
+<p><em>PUNTO IMPORTANTE: En el anacron no funciona la variable $(whoami) por lo que tendremos que indicar el nombre del usuario</em></p>
+<p>Ejemplo de como hacer un back-up de la carpeta “/Imagenes” diariamente con un script</p>
+<p><img alt="script" src="../Imagenes/Sprint2/13.Script.png" /></p>
+<p>Le damos permisos al script para que pueda ejecutarse</p>
+<p><img alt="permisos" src="../Imagenes/Sprint2/permisos.png" /></p>
+<p>Y comprobamos que se haya generado cuando ejecutamos el script</p>
+<p><img alt="EjecScript" src="../Imagenes/Sprint2/14.EjecScript.png" /></p>
+<p>Este Script es muy sencillo lo unico que haces acceder a la carpeta de <code>Imagenes</code> comprimir el contenido de la misma y colocarle el nombre de copia junto a la marca de tiempo <code>TIMESTAMP</code> creada en el mismo script</p>
+<p>Para automatizarlo tenemos que ir al archivo <code>/etc/crontab</code> y colocar la siguiente línea.</p>
+<p><img alt="crontab" src="../Imagenes/Sprint2/crontab.png" /></p>
+<p>Llegada a la hora que hemos puesto en este caso del mes 15/01 a las 10:26 se tendría que haber creado una copia en el Escritorio.</p>
+<p><img alt="pruebacrontab" src="../Imagenes/Sprint2/crontabprueba.png" /></p>
+<p>Si queremos usar el “anacron” iremos a la carpeta <code>/etc/cron.daily</code> y moveremos nuestro script al interior para que se ejecute cada día una vez se inicie el ordenador. !IMPORTANTE! quitar el <code>.sh</code> del nombre porque sino no funcionara.</p>
+<p><img alt="corondailyls" src="../Imagenes/Sprint2/crondailyls.png" /></p>
+<p>Modificamos el archivo <code>/var/spool/anacron/cron.daily</code> ya que en el interior de este archivo se crea una marca de tiempo la cual hará que no se ejecuten nuevamente los <code>cron.daily</code> hoy, borramos esta marca de tiempo para que se “crea” el ordenador que todavía no se a ejecutado hoy y tenga que hacer nuevamente sus tareas planeadas en el “/etc/cron.daily”</p>
+<p><img alt="cron.daily" src="../Imagenes/Sprint2/tiempo.png" /></p>
+<p>En este archivo tocamos la parte del anacron, a diferencia del cron este ejecutara los archivos aunque el ordenador esté apagado, es decir se esperará a que el ordenador se encienda nuevamente para comprobar las tareas que le faltan por hacer y las hará.</p>
+<p><img alt="cron.daily" src="../Imagenes/Sprint2/anacrontab.png" /></p>
+<p>Reiniciamos el ordenador y comprobamos que se crea nuevamente una marca de tiempo y al minuto como teníamos asignado en el archivo <code>/etc/anacrontab</code> se ejecutara y se creará la copia de seguridad.</p>
+<p><img alt="anacron" src="../Imagenes/Sprint2/prueba%20anacron.png" /></p>
+              
+            </div>
+          </div><footer class="custom-footer">
+    <p>
+        <a href="" target="_blank" rel="noopener noreferrer">MKDocs</a> 
+        © 2024 by Hugo Gallardo is licensed under 
+        <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="noopener noreferrer">CC BY-NC-ND 4.0</a>
+    </p>
+</footer>
+    
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../Sprint1/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../Sprint3/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

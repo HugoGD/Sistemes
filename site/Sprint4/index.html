@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Sprint4 - Projecto FOG Hugo</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../styles/custom.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Sprint4";
+        var mkdocs_page_input_path = "Sprint4.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Projecto FOG Hugo
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Introduccion</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../Sprint1/">Sprint1</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../Sprint2/">Sprint2</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../Sprint3/">Sprint3</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="./">Sprint4</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#raids">Raid's</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#raid-1">RAID 1</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#importante">IMPORTANTE!</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#raid-5">RAID 5</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#importante_1">IMPORTANTE!</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../Sprint5/">Sprint5</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Projecto FOG Hugo</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Sprint4</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="sprint-4">Sprint 4</h1>
+<h2 id="raids">Raid's</h2>
+<p><strong>Que es un RAID:</strong>
+RAID (Redundant Array of Independent Disks) es una tecnología de almacenamiento que combina múltiples discos duros en una sola unidad lógica para mejorar el rendimiento y la redundancia.</p>
+<p><strong>Tipos de RAID:</strong>
+- RAID 0: Distribución de datos sin redundancia.
+- RAID 1: Espejado de discos para redundancia.
+- RAID 5: Distribución de datos y paridad.
+- RAID 6: Distribución de datos y doble paridad.
+- RAID 10: Combinación de RAID 1 y RAID 0.</p>
+<p><strong>Que funcion tienen todos los RAID:</strong>
+Todos los RAID tienen la función de mejorar el rendimiento, la redundancia y la disponibilidad de los datos.</p>
+<p><strong>Que es un Volum?</strong>
+Un volumen es una unidad lógica de almacenamiento creada a partir de uno o más discos físicos.</p>
+<h2 id="raid-1">RAID 1</h2>
+<p>Hacemos un Update para actualizar los repositorios y descargar la última versión</p>
+<p><img alt="Sprint4" src="../Imagenes/Sprint%204/Sp4.1.png" /></p>
+<p>Ahora instalamos el paquete que necesitaremos para poder comenzar a trabajar con los RAID</p>
+<p><img alt="Sprint4" src="../Imagenes/Sprint%204/sp4.2.png" /></p>
+<p>Hacemos un <code>fdisk -l</code> para poder ver los discos </p>
+<p><img alt="Sprint4" src="../Imagenes/Sprint%204/sp4.3.png" /></p>
+<p>Entramos dentro del disco</p>
+<p><img alt="Sprint4" src="../Imagenes/Sprint%204/sp4.4.png" /></p>
+<p>Cambiamos el sistema de fitxeros para poder hacerlo de ambos discos.</p>
+<p><img alt="Sprint4" src="../Imagenes/Sprint%204/sp4.5.png" /></p>
+<p><img alt="Sprint4" src="../Imagenes/Sprint%204/sp4.6.png" /></p>
+<p>Ahora hacemos un <code>fdisk -l</code> para comprobar que salen de esta manera los discos que hemos cambiado.</p>
+<p><img alt="Sprint4" src="../Imagenes/Sprint%204/sp4.7.png" /></p>
+<p>Creamos la carpeta donde se hara el raid y le entregamos todos los permisos.</p>
+<p><img alt="Sprint4" src="../Imagenes/Sprint%204/sprint4.8.png" /></p>
+<p><img alt="Sprint4" src="../Imagenes/Sprint%204/sp4.9.png" /></p>
+<p>Ahora crearemos el RAID con el siguiente comando</p>
+<p><code>mdadm –create /dev/md0 –level=1 –raid-devices=2 /dev/sdb1 /dev/sdc1</code></p>
+<p><img alt="Sprint4" src="../Imagenes/Sprint%204/sp4.10.png" /></p>
+<p>Le cambiamos el formato para poder utilizarlo</p>
+<p><img alt="Sprint4" src="../Imagenes/Sprint%204/sp4.11.png" /></p>
+<p>Para recibir información de raid utilizaremos <code>mdadm –detail /dev/md0</code></p>
+<p><img alt="Sprint4" src="../Imagenes/Sprint%204/sp4.12.png" /></p>
+<p>Ahora haremos que el <code>–detail –scan</code> se vaya a una carpeta en un .txt que nosotros le indicaremos </p>
+<p><img alt="Sprint4" src="../Imagenes/Sprint%204/sp4.13.png" /></p>
+<p>Ahora haremos que el raid se monte automáticamente yendo al archivo <code>/etc/mdadm.conf</code> y añadimos la siguiente línea</p>
+<p><img alt="Sprint4" src="../Imagenes/Sprint%204/sp4.14.png" /></p>
+<p>Y añadiremos también una línea en el archivo <code>/etc/fstab</code></p>
+<p><img alt="Sprint4" src="../Imagenes/Sprint%204/sp4.15.png" /></p>
+<h3 id="importante"><strong><span style="color:red">IMPORTANTE!</span></strong></h3>
+<p>Antes de hacer el reboot tendremos que poner las siguientes comandas</p>
+<p><img alt="Sprint4" src="../Imagenes/Sprint%204/sp4.16.png" /></p>
+<p>Una vez se haya iniciado nuevamente la máquina para comprobar que todo ha funcionado correctamente haremos un detail <code>mdadm –detail /dev/md0</code></p>
+<p><img alt="Sprint4" src="../Imagenes/Sprint%204/sp4.17.png" /></p>
+<p>Ahora para hacer las pruebas crearemos una carpeta y un archivo dentro</p>
+<p><img alt="Sprint4" src="../Imagenes/Sprint%204/sp4.18.png" /></p>
+<p>Ahora haremos fallar uno de los discos para comprobar que pasa <code>mdadm /dev/md0 -f /dev/sdb1</code></p>
+<p><img alt="Sprint4" src="../Imagenes/Sprint%204/sp4.19.png" /></p>
+<p>Tendría que salir asi en un detail</p>
+<p><img alt="Sprint4" src="../Imagenes/Sprint%204/sp4.20.png" /></p>
+<p>Ahora quitaremos el disco que falla como se hace en maquinas fisicas, se hara con el comando <code>mdadm /dev/md0 -r /dev/sdb1</code></p>
+<p><img alt="Sprint4" src="../Imagenes/Sprint%204/sp4.21.png" /></p>
+<p>Ahora para comprobar que podemos trabajar con un solo disco crearemos algo nuevamente</p>
+<p><img alt="sprint4" src="../Imagenes/Sprint%204/sp4.21.png" /></p>
+<p>Ahora volveremos a añadir el disco utilizando <code>mdadm /dev/md0 -a /dev/sdb1</code> y rapidamente haremos un detail para ver como se esta copiando el contenido</p>
+<p><img alt="Sprint4" src="../Imagenes/Sprint%204/sp4.23.png" /></p>
+<p>Si volvemos a hacer el detail tendría que salir el estado ACTIVE como de normal.</p>
+<p><img alt="Sprint4" src="../Imagenes/Sprint%204/sp4.24.png" /></p>
+<p>Ahora comprobaremos lo mismo pero quitando el disco desde el VB con la máquina apagada</p>
+<p><img alt="Sprint4" src="../Imagenes/Sprint%204/sp4.25.png" /></p>
+<p>Una vez la máquina se a encendido volveremos a hacer un detail a ver qué está pasando</p>
+<p><img alt="Sprint4" src="../Imagenes/Sprint%204/sp4.26.png" /></p>
+<p>Y podemos comprobar que en la carpeta raid1 no hay nada</p>
+<p><img alt="Sprint4" src="../Imagenes/Sprint%204/sp4.27.png" /></p>
+<p>Ahora pararemos el raid para poder montarlo con un solo disco, le haremos un update para que pueda volver a funcionar con normalidad y lo montaremos</p>
+<p><img alt="Sprint4" src="../Imagenes/Sprint%204/sp4.28.png" /></p>
+<p>Comprobamos que funcione </p>
+<p><img alt="Sprint4" src="../Imagenes/Sprint%204/sp4.29.png" /></p>
+<p><img alt="Sprint4" src="../Imagenes/Sprint%204/sp4.30.png" /></p>
+<p>Ahora nuevamente creamos otro disco y lo añadimos a la maquina virtual</p>
+<p><img alt="Sprint4" src="../Imagenes/Sprint%204/sp4.30.png" /></p>
+<p>Comprobamos que se sigue manteniendo el raid activo y se puede seguir trabajando</p>
+<p><img alt="Sprint4" src="../Imagenes/Sprint%204/sp4.32.png" /></p>
+<p>Comprobamos como se llama el nuevo disco y lo particionamos como antes.</p>
+<p><img alt="Sprint4" src="../Imagenes/Sprint%204/sp4.33.png" /></p>
+<p><img alt="Sprint4" src="../Imagenes/Sprint%204/sp4.34.png" /></p>
+<p>Ahora añadimos el disco al raid</p>
+<p><img alt="Sprint4" src="../Imagenes/Sprint%204/sp4.35.png" /></p>
+<p><img alt="Sprint4" src="../Imagenes/Sprint%204/sp4.36.png" /></p>
+<p>Y comprobamos que podemos ver las cosas en la carpeta de <strong>raid1</strong></p>
+<p><img alt="Sprint4" src="../Imagenes/Sprint%204/sp4.37.png" /></p>
+<p>Ahora veremos si funciona correctamente después de hacer un reboot.</p>
+<p><img alt="Sprint4" src="../Imagenes/Sprint%204/sp4.38.png" /></p>
+<p>Ahora desmontamos el raid y lo pararemos</p>
+<p><img alt="Sprint4" src="../Imagenes/Sprint%204/sp4.39.png" /></p>
+<p>Eliminaremos el interior la carpeta de raid1</p>
+<p><img alt="Sprint4" src="../Imagenes/Sprint%204/sp4.40.png" /></p>
+<p>Entraremos al fstab y comentaremos la línea del fstab para que no se monte nuevamente</p>
+<p><img alt="Sprint4" src="../Imagenes/Sprint%204/sp4.41.png" /></p>
+<p>También borraremos las lineas del mdadm.conf</p>
+<p><img alt="Sprint4" src="../Imagenes/Sprint%204/sp4.42.png" /></p>
+<p>Haremos un <code>–stop</code>, <code>--remove</code> y un <code>--superblock</code> ya después un reboot para comprobar si se vuelve a montar el raid una vez reiniciada.</p>
+<p><img alt="Sprint4" src="../Imagenes/Sprint%204/sp4.43.png" /></p>
+<h2 id="raid-5">RAID 5</h2>
+<p>Para un raid 5 tendremos que añadir 4 discos duros en el virtual box.</p>
+<p><img alt="Sprint4" src="../Imagenes/Sprint%204/raid5-1.png" /></p>
+<p>Hacemos un fdisk -l para poder ver los discos </p>
+<p><img alt="Sprint4" src="../Imagenes/Sprint%204/raid5-2.png" /></p>
+<p><img alt="Sprint4" src="../Imagenes/Sprint%204/raid5-3.png" /></p>
+<p>Tenemos que entrar dentro de cada disco para cambiar el sistema de fitxeros de cada uno de ellos.</p>
+<p><img alt="Sprint4" src="../Imagenes/Sprint%204/raid5-4.png" /></p>
+<p><img alt="Sprint4" src="../Imagenes/Sprint%204/raid5-5.png" /></p>
+<p>Al no tener particion en los 2 discos nuevos tendremos que crearla en el disco “sdd” y “sde”.</p>
+<p><img alt="Sprint4" src="../Imagenes/Sprint%204/raid5-6.png" /></p>
+<p><img alt="Sprint4" src="../Imagenes/Sprint%204/raid5-7.png" /></p>
+<p><img alt="Sprint4" src="../Imagenes/Sprint%204/raid5-8.png" /></p>
+<p><img alt="Sprint4" src="../Imagenes/Sprint%204/raid5-9.png" /></p>
+<p>Ahora hacemos un “fdisk -l” para comprobar que salen de esta manera los discos que hemos cambiado y verificar que lo hemos hecho adecuadamente.</p>
+<p><img alt="Sprint4" src="../Imagenes/Sprint%204/raid5-10.png" /></p>
+<p><img alt="Sprint4" src="../Imagenes/Sprint%204/raid5-11.png" /></p>
+<p>Creamos la carpeta donde se formará el raid y le entregamos todos los permisos para poderla utilizar al completo.</p>
+<p><img alt="Sprint4" src="../Imagenes/Sprint%204/raid5-12.png" /></p>
+<p>Ahora crearemos el “RAID” con el siguiente comando</p>
+<p><code>mdadm –create /dev/md0 –level=5 –raid-devices=4 /dev/sdb1 /dev/sdc1 /dev/sdd1 /dev/sde1</code></p>
+<p><img alt="Sprint4" src="../Imagenes/Sprint%204/raid5-13.png" /></p>
+<p>Le cambiamos el formato para poder utilizarlo</p>
+<p><img alt="Sprint4" src="../Imagenes/Sprint%204/raid5-14.png" /></p>
+<p>Para recibir información de raid utilizaremos <code>mdadm –detail /dev/md0</code></p>
+<p><img alt="Sprint4" src="../Imagenes/Sprint%204/raid5-15.png" /></p>
+<p>Ahora haremos que el <code>–detail –scan</code> se vaya a una carpeta en un .txt que nosotros le indicaremos </p>
+<p><img alt="Sprint4" src="../Imagenes/Sprint%204/raid5-16.png" /></p>
+<p>Haremos que el raid se monte automáticamente yendo al archivo <code>/etc/mdadm.conf</code> y añadimos la siguiente línea</p>
+<p><img alt="Sprint4" src="../Imagenes/Sprint%204/raid5-17.png" /></p>
+<p>Y añadiremos también una línea en el archivo /etc/fstab</p>
+<p><img alt="Sprint4" src="../Imagenes/Sprint%204/raid5-18.png" /></p>
+<h3 id="importante_1"><strong><span style="color:red; font-size: 1.5em;">IMPORTANTE!</span></strong></h3>
+<p>Antes de hacer el reboot tendremos que poner las siguientes comandas</p>
+<p><img alt="Sprint4" src="../Imagenes/Sprint%204/raid5-19.png" /></p>
+<p>Una vez se haya iniciado nuevamente la máquina para comprobar que todo ha funcionado correctamente haremos un detail <code>mdadm –detail /dev/md0</code></p>
+<p><img alt="Sprint4" src="../Imagenes/Sprint%204/raid5-20.png" /></p>
+<p>Ahora para hacer las pruebas crearemos una carpeta y un archivo dentro</p>
+<p><img alt="Sprint4" src="../Imagenes/Sprint%204/raid5-21.png" /></p>
+<p>Ahora haremos fallar uno de los discos para comprobar que pasa <code>mdadm /dev/md0 -f /dev/sdb1</code></p>
+<p><img alt="Sprint4" src="../Imagenes/Sprint%204/raid522.png" /></p>
+<p>Hacemos un detail y comprobamos que uno de los discos sale fallando.</p>
+<p><img alt="Sprint4" src="../Imagenes/Sprint%204/raid5-23.png" /></p>
+<p>Ahora quitaremos el disco que falla como se hace en maquinas fisicas, se hara con el comando <code>mdadm /dev/md0 -r /dev/sdb1</code></p>
+<p><img alt="Sprint4" src="../Imagenes/Sprint%204/raid5-24.png" /></p>
+<p>Haciendo un detail tendria que salir que el disco esta en el stado “removed”</p>
+<p><img alt="Sprint4" src="../Imagenes/Sprint%204/raid5-25.png" /></p>
+<p>Ahora para comprobar que podemos trabajar con un disco menos crearemos algo nuevamente</p>
+<p><img alt="Sprint4" src="../Imagenes/Sprint%204/raid5-26.png" /></p>
+<p>Ahora quitaremos otro de los discos para comprobar que pasa con el raid.</p>
+<p><img alt="Sprint4" src="../Imagenes/Sprint%204/raid5-27.png" /></p>
+<p><img alt="Sprint4" src="../Imagenes/Sprint%204/28.png" /></p>
+<p><img alt="Sprint4" src="../Imagenes/Sprint%204/29.png" /></p>
+<p><img alt="Sprint4" src="../Imagenes/Sprint%204/30.png" /></p>
+<p>Ahora comprobaremos si funciona </p>
+<p><img alt="Sprint4" src="../Imagenes/Sprint%204/31.png" /></p>
+<p>Sigue funcionando, por lo que saldremos de la maquina y quitaremos los discos de la misma para comprobar que pasa.</p>
+<p><img alt="Sprint4" src="../Imagenes/Sprint%204/32.png" /></p>
+<p>Una vez la máquina se a encendido volveremos a hacer un detail a ver qué está pasando</p>
+<p><img alt="Sprint4" src="../Imagenes/Sprint%204/33.png" /></p>
+<p>Y podemos confirmar que ya no funciona</p>
+<p><img alt="Sprint4" src="../Imagenes/Sprint%204/34.png" /></p>
+              
+            </div>
+          </div><footer class="custom-footer">
+    <p>
+        <a href="" target="_blank" rel="noopener noreferrer">MKDocs</a> 
+        © 2024 by Hugo Gallardo is licensed under 
+        <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="noopener noreferrer">CC BY-NC-ND 4.0</a>
+    </p>
+</footer>
+    
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../Sprint3/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../Sprint5/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
