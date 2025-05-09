@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Sprint2Windows - Projecto FOG Hugo</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../styles/custom.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Sprint2Windows";
+        var mkdocs_page_input_path = "Sprint2W.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Projecto FOG Hugo
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">INTRODUCCION</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="..">Introducción</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">UBUNTU</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../Sprint1/">Sprint1</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Sprint2/">Sprint2</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Sprint3/">Sprint3</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Sprint4/">Sprint4</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Sprint5/">Sprint5</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">WINDOWS</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../Sprint1W/">Sprint1Windows</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Sprint2Windows</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#gestion-de-procesos">Gestion de procesos</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#que-es-un-proceso">¿Qué es un proceso?</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#grafica">Grafica</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#cmd">CMD</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#gestion-de-usuario-grupos-y-permisos">Gestion de usuario, grupos y permisos</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#tipos-de-cuentas-de-usuario">Tipos de cuentas de usuario</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#grupos-de-usuarios">Grupos de usuarios</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#grafica_1">Grafica</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#terminal">Terminal</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#permisos-basicos">Permisos Basicos</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#sistemas-de-archivos-y-particiones">Sistemas de archivos y particiones</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#principales-sistemas-de-archivos-en-windows">Principales sistemas de archivos en Windows</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#tipos-de-particiones">Tipos de Particiones</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#herramientas-para-gestionar-particiones-en-windows">Herramientas para gestionar particiones en Windows</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#administrador-de-discos-gui">Administrador de discos (GUI)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#diskpart-cmd">Diskpart (CMD)</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#copias-de-seguridad-y-automatizacion-de-tareas">Copias de seguridad y automatizacion de tareas</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#que-es-una-copia-de-seguridad">¿Qué es una copia de seguridad?</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#tipos-de-copia-de-seguridad">Tipos de copia de seguridad</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#como-hacer-copias-de-seguridad">Como hacer Copias de Seguridad</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#automatizacion-de-tareas">Automatización de tareas</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#cuotas-de-discos">Cuotas de discos</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#que-es-una-cuota-de-disco">¿Qué es una cuota de disco?</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#como-activar-y-configurar-cuotas-de-disco">Cómo activar y configurar cuotas de disco</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Sprint3W/">Sprint3Windows</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Projecto FOG Hugo</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">WINDOWS</li>
+      <li class="breadcrumb-item active">Sprint2Windows</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="sprint-2-windows">Sprint 2 Windows</h1>
+<h2 id="gestion-de-procesos">Gestion de procesos</h2>
+<h3 id="que-es-un-proceso">¿Qué es un proceso?</h3>
+<p>Un proceso es una instancia de un programa que se está ejecutando en el sistema operativo. Puede tener uno o varios hilos (threads) y consumir recursos como CPU, memoria, disco, red, etc.</p>
+<p>Todos los procesos los podemos mirar de una manera <strong>Grafica</strong> o de forma con el <strong>CMD</strong></p>
+<h4 id="grafica">Grafica</h4>
+<p>Para verlo de manera grafica (con interfaz) tendremos que usar el Administrador de tareas este se abre pulsando <code>Ctrl + Shift + Esc</code> o haciendo click derecho en la barra de tareas y dandole a administrador de tareas</p>
+<p><img alt="Sprint7" src="../Imagenes/Sprint7/1.png" /></p>
+<p>Aqui podremos finalizar procesos simplemente seleccionando la aplicacion o el proceso que queremos finalizar y darle abajo a la derecha "Finalizar Tarea"</p>
+<p><img alt="Sprint7" src="../Imagenes/Sprint7/2.png" /></p>
+<h4 id="cmd">CMD</h4>
+<p>Con el CMD es algo mas complejo para ver los procesos tendremos que ejecutar el comando <code>tasklist</code></p>
+<p><img alt="Sprint7" src="../Imagenes/Sprint7/3.png" /></p>
+<p>Para fializar el proceso tendremos que ejecutar el siguiente comando <code>taskkill /IM nombre.exe /F</code></p>
+<p><img alt="Sprint7" src="../Imagenes/Sprint7/4.png" /></p>
+<p>Tambien se podra finalizar por el PID <code>taskkill /PID numero /F</code></p>
+<p><img alt="Sprint7" src="../Imagenes/Sprint7/5.png" /></p>
+<p>Y podremos iniciar programas/procesos con el comando <code>start programa.exe</code></p>
+<p><img alt="Sprint7" src="../Imagenes/Sprint7/6.png" /></p>
+<h2 id="gestion-de-usuario-grupos-y-permisos">Gestion de usuario, grupos y permisos</h2>
+<h3 id="tipos-de-cuentas-de-usuario">Tipos de cuentas de usuario</h3>
+<p><strong>Administrador</strong> --&gt; Control total del sistema (instalar programas, modificar configuraciones, crear usuarios, etc.)</p>
+<p><strong>Estándar</strong> --&gt; Uso básico del equipo, sin acceso a configuraciones avanzadas</p>
+<p><strong>Invitado (Guest)</strong> --&gt; Acceso muy limitado, no guarda datos ni configuraciones (deshabilitada por defecto)</p>
+<h3 id="grupos-de-usuarios">Grupos de usuarios</h3>
+<p><strong>Administradores</strong> --&gt; Tienen control total
+<strong>Usuarios</strong> --&gt; Acceso básico, sin privilegios administrativos
+<strong>Invitados</strong> --&gt; Permisos limitados y temporales
+<strong>Usuarios del escritorio remoto</strong> --&gt; Pueden iniciar sesión por RDP
+<strong>Operadores de copia de seguridad</strong> --&gt; Pueden hacer backup y restore aunque no tengan permisos sobre los archivos</p>
+<h3 id="grafica_1">Grafica</h3>
+<p>Abrimos el Panel de control y vamos a Cuentas de usuario</p>
+<p><img alt="Sprint7" src="../Imagenes/Sprint7/7.png" /></p>
+<p>Le damos a la opcion de administrar otra cuenta</p>
+<p><img alt="Sprint7" src="../Imagenes/Sprint7/8.png" /></p>
+<p>Le damos a Agregar un nuevo usuario en Configuracion y ahi podemos crear un usuario de manera grafica y editarlos en cualquier momento que queramos</p>
+<p><img alt="Sprint7" src="../Imagenes/Sprint7/9.png" /></p>
+<h3 id="terminal">Terminal</h3>
+<p><code>net user</code> --&gt; lista todos los usuarios</p>
+<p><img alt="Sprint7" src="../Imagenes/Sprint7/11.png" /></p>
+<p><code>net user nombre /add</code> --&gt; Crea un usuario </p>
+<p><img alt="Sprint7" src="../Imagenes/Sprint7/12.png" /></p>
+<p><code>net user nombre *</code> --&gt; Cambia la contraseña</p>
+<p><img alt="Sprint7" src="../Imagenes/Sprint7/13.png" /></p>
+<p><code>net user nombre /delete</code> --&gt; Elimina ususario</p>
+<p><img alt="Sprint7" src="../Imagenes/Sprint7/14.png" /></p>
+<p><code>net localgroup</code> --&gt; Lista todos los grupos</p>
+<p><img alt="Sprint7" src="../Imagenes/Sprint7/15.png" /></p>
+<p><code>net localgroup grupo /add</code> --&gt; Crea un grupo</p>
+<p><img alt="Sprint7" src="../Imagenes/Sprint7/16.png" /></p>
+<p><code>net localgroup grupo usuario /add</code> --&gt; Añade usuario a un grupo</p>
+<p><img alt="Sprint7" src="../Imagenes/Sprint7/17.png" /></p>
+<h4 id="permisos-basicos">Permisos Basicos</h4>
+<p><strong>Lectura</strong> --&gt; Ver contenido</p>
+<p><strong>Escritura</strong> --&gt; Modificar Contenido</p>
+<p><strong>Ejecución</strong> --&gt; Ejecutar archivos</p>
+<p>Para poder modificar los archivos de una carpeta le damos click derecho a la misma y le damos a propiedades </p>
+<p><img alt="Sprint7" src="../Imagenes/Sprint7/18.png" /></p>
+<p>Le damos a "Seguridad"</p>
+<p><img alt="Sprint7" src="../Imagenes/Sprint7/19.png" /></p>
+<p>Le damos a editar y ya podremos tocar los permisos de tanto usuarios como grupos</p>
+<p><img alt="Sprint7" src="../Imagenes/Sprint7/20.png" /></p>
+<h2 id="sistemas-de-archivos-y-particiones">Sistemas de archivos y particiones</h2>
+<p>Es el método que usa el sistema operativo para almacenar, organizar, leer y escribir datos en una partición o unidad de almacenamiento.</p>
+<h3 id="principales-sistemas-de-archivos-en-windows">Principales sistemas de archivos en Windows</h3>
+<p><strong>NTFS</strong> --&gt; Sistema moderno por defecto en Windows. Soporta archivos grandes, permisos, cifrado, compresión, etc.</p>
+<p><strong>FAT32</strong> --&gt; Compatible con muchos sistemas, pero limitado a archivos de 4 GB y particiones de hasta 32 GB.</p>
+<p><strong>exFAT</strong> --&gt; Diseñado para memorias USB y discos externos. Soporta archivos grandes y es compatible con Windows y macOS.</p>
+<h3 id="tipos-de-particiones">Tipos de Particiones</h3>
+<p><strong>Primaria</strong> --&gt; Partición principal donde se puede instalar un sistema operativo. Windows requiere al menos una primaria para arrancar.
+<strong>Extendida</strong> --&gt; No se puede usar directamente, pero permite crear varias unidades lógicas dentro de ella.
+<strong>Lógica</strong> --&gt; Subdivisión dentro de una partición extendida. Se comporta como una unidad independiente.</p>
+<h3 id="herramientas-para-gestionar-particiones-en-windows">Herramientas para gestionar particiones en Windows</h3>
+<h4 id="administrador-de-discos-gui">Administrador de discos (GUI)</h4>
+<p>Le damos a la combinacion de teclas de <code>Windows + R</code> y escribimos diskmgmt.msc</p>
+<p><img alt="Sprint7" src="../Imagenes/Sprint7/21.png" /></p>
+<h4 id="diskpart-cmd">Diskpart (CMD)</h4>
+<p>Colocamos dikskpart en la terminal para poder acceder a la modificaicon de discos</p>
+<p><img alt="Sprint7" src="../Imagenes/Sprint7/22.png" /></p>
+<p>Colocamos <code>list disk</code> para listar los discos que tenemos</p>
+<p><img alt="Sprint7" src="../Imagenes/Sprint7/23.png" /></p>
+<p>colocamos <code>select disk Nº</code> para poder modificar el disco que seleccionamos
+- Nº = Numero de disco</p>
+<p><img alt="Sprint7" src="../Imagenes/Sprint7/24.png" /></p>
+<p>Podemos poner <code>list partition</code> para listar las particiones del disco</p>
+<p><img alt="Sprint7" src="../Imagenes/Sprint7/25.png" /></p>
+<p>Para crear una particion utilizaremos <code>create partition primary</code> </p>
+<p><img alt="Sprint7" src="../Imagenes/Sprint7/26.png" /></p>
+<p>Formatearemos la particion a ntfs con el comando <code>format fs=ntfs quick</code></p>
+<p><img alt="Sprint7" src="../Imagenes/Sprint7/27.png" /></p>
+<p>Y le asignamos una letra a la particion con el comadno <code>assign letter=B</code></p>
+<p><img alt="Sprint7" src="../Imagenes/Sprint7/28.png" /></p>
+<p>Y volvemos a ver como se a creado la particion correctamente</p>
+<p><img alt="Sprint7" src="../Imagenes/Sprint7/29.png" /></p>
+<h2 id="copias-de-seguridad-y-automatizacion-de-tareas">Copias de seguridad y automatizacion de tareas</h2>
+<h3 id="que-es-una-copia-de-seguridad">¿Qué es una copia de seguridad?</h3>
+<p>Una copia de seguridad es una réplica de archivos, configuraciones o del sistema completo que se guarda en otro lugar para evitar pérdida de datos en caso de fallo, error humano, virus o daño físico.</p>
+<h3 id="tipos-de-copia-de-seguridad">Tipos de copia de seguridad</h3>
+<p><strong>Completa</strong> --&gt; Copia todos los archivos y datos seleccionados.
+<strong>Incremental</strong> --&gt; Solo copia los archivos modificados desde la última copia.
+<strong>Diferencial</strong> --&gt; Copia los archivos modificados desde la última copia completa.</p>
+<h3 id="como-hacer-copias-de-seguridad">Como hacer Copias de Seguridad</h3>
+<p>Abrimos la <code>Configuracion &gt; Actualizacion y seguridad &gt; Copia de seguridad</code></p>
+<p><img alt="Sprint7" src="../Imagenes/Sprint7/30.png" /></p>
+<p><img alt="Sprint7" src="../Imagenes/Sprint7/31.png" /></p>
+<p>Asignamos donde queremos que se haga la copia de seguridad</p>
+<p><img alt="Sprint7" src="../Imagenes/Sprint7/32.png" /></p>
+<p>De esta manera tendremos copias de seguridad periodicas automaticamente en ese mismo disco duro.</p>
+<p><img alt="Sprint7" src="../Imagenes/Sprint7/33.png" /></p>
+<p>En caso de que queramos hacer una al momento le damos a mas opciones &gt; hacer ahora una copia de seguridad</p>
+<p><img alt="Sprint7" src="../Imagenes/Sprint7/34.png" /></p>
+<h3 id="automatizacion-de-tareas">Automatización de tareas</h3>
+<p>La automatización de tareas permite que ciertas acciones se ejecuten de forma automática y programada, sin intervención del usuario.</p>
+<p>Herramienta integrada de Windows que permite programar tareas como ejecutar programas, scripts, hacer copias, etc...</p>
+<p><img alt="Sprint7" src="../Imagenes/Sprint7/35.png" /></p>
+<p>Para programar una tarea iriamos a "crear tarea" en la parte de la derecho y tendriamos la opcion de programar un script que se ejecutase cuando nosotros queramos.</p>
+<p><img alt="Sprint7" src="../Imagenes/Sprint7/36.png" /></p>
+<p><img alt="Sprint7" src="../Imagenes/Sprint7/37.png" /></p>
+<p>Al no saber hacer Scripts lo dejare ahi.</p>
+<h2 id="cuotas-de-discos">Cuotas de discos</h2>
+<h3 id="que-es-una-cuota-de-disco">¿Qué es una cuota de disco?</h3>
+<p>Una cuota de disco es una limitación del espacio que un usuario puede usar en una unidad del sistema (por ejemplo, en el disco C:). Esta herramienta es especialmente útil para:</p>
+<ul>
+<li>
+<p>Evitar que un usuario llene el disco con demasiados archivos.</p>
+</li>
+<li>
+<p>Gestionar recursos en equipos compartidos o servidores.</p>
+</li>
+<li>
+<p>Controlar el uso del almacenamiento de forma individual.</p>
+</li>
+</ul>
+<h3 id="como-activar-y-configurar-cuotas-de-disco">Cómo activar y configurar cuotas de disco</h3>
+<p>Abrimos el Explorador de archivos, le damos click derecho sobre el disco duro y le damos a propiedades.</p>
+<p><img alt="Sprint7" src="../Imagenes/Sprint7/41.png" /></p>
+<p>Seleccionamos la pestaña cuota y mostramos la configuracion de la misma </p>
+<p><img alt="Sprint7" src="../Imagenes/Sprint7/42.png" /></p>
+<p><img alt="Sprint7" src="../Imagenes/Sprint7/43.png" /></p>
+<p>Habilitamos la Administracion de cuota y ya podriamos modificar como queramos la misma</p>
+<p><img alt="Sprint7" src="../Imagenes/Sprint7/44.png" /></p>
+              
+            </div>
+          </div><footer class="custom-footer">
+    <p>
+        <a href="" target="_blank" rel="noopener noreferrer">MKDocs</a> 
+        © 2024 by Hugo Gallardo is licensed under 
+        <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="noopener noreferrer">CC BY-NC-ND 4.0</a>
+    </p>
+</footer>
+    
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../Sprint1W/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../Sprint3W/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
