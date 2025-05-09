@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Sprint3Windows - Projecto FOG Hugo</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../styles/custom.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Sprint3Windows";
+        var mkdocs_page_input_path = "Sprint3W.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Projecto FOG Hugo
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">INTRODUCCION</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="..">Introducción</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">UBUNTU</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../Sprint1/">Sprint1</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Sprint2/">Sprint2</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Sprint3/">Sprint3</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Sprint4/">Sprint4</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Sprint5/">Sprint5</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">WINDOWS</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../Sprint1W/">Sprint1Windows</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Sprint2W/">Sprint2Windows</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Sprint3Windows</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#instalacion-dominio-active-directory">Instalacion dominio Active Directory</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#gestion-del-dominio">Gestion del dominio</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#entornos-graficos">Entornos Graficos</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#unir-equipos-al-dominio">Unir equipos al dominio</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#servidor-samba">Servidor SAMBA</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#crear-una-carpeta-compartida">Crear una carpeta compartida</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#servidor-nfs">Servidor NFS</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#cliente">CLIENTE</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#perfil-movil">Perfil Movil</a>
+    </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Projecto FOG Hugo</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">WINDOWS</li>
+      <li class="breadcrumb-item active">Sprint3Windows</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="sprint-3-windows">Sprint 3 Windows</h1>
+<h2 id="instalacion-dominio-active-directory">Instalacion dominio Active Directory</h2>
+<p>Utilizaremos “xarxa NAT” para que nuestra IP sea fijo independientemente de mi ubicacion.</p>
+<p><img alt="Sprint3W" src="../Imagenes/Sprint8/1.png" /></p>
+<p><img alt="Sprint3W" src="../Imagenes/Sprint8/2.png" /></p>
+<p>La colocamos estática para corroborar que no cambiara.</p>
+<p><img alt="Sprint3W" src="../Imagenes/Sprint8/3.png" /></p>
+<p><img alt="Sprint3W" src="../Imagenes/Sprint8/4.png" /></p>
+<p>Le hacemos un ping a 8.8.8.8 para comprobar que tenemos acceso a internet.</p>
+<p><img alt="Sprint3W" src="../Imagenes/Sprint8/6.png" /></p>
+<p>Cambiamos el HOSTNAME del equipo para que sea mas accesible, ya que el Default esta definido por Numeros y Letras</p>
+<p><img alt="Sprint3W" src="../Imagenes/Sprint8/5.png" /></p>
+<p><img alt="Sprint3W" src="../Imagenes/Sprint8/7.png" /></p>
+<p>Una vez hemos hecho todos los preparativos abrimos el Administrador del servidor.</p>
+<p><img alt="Sprint3W" src="../Imagenes/Sprint8/8.png" /></p>
+<p>Entramos al apartado de "Agregar roles y caracteristicas" y le daremos a siguiente hasta el apartado de Roles de servidor</p>
+<p><img alt="Sprint3W" src="../Imagenes/Sprint8/9.png" /></p>
+<p>Agregaremos el rol en el servidor de "Servicios de dominio de Active Directory"</p>
+<p><img alt="Sprint3W" src="../Imagenes/Sprint8/10.png" /></p>
+<p>Seguiremos dandole a siguiente hasta la confirmacion final que le daremos a Instalar.</p>
+<p><img alt="Sprint3W" src="../Imagenes/Sprint8/11.png" /></p>
+<p>Ahora le daremos a "Promover este servidor a controlador de dominio"</p>
+<p><img alt="Sprint3W" src="../Imagenes/Sprint8/12.png" /></p>
+<p>Esto hara que se nos abra un apartado para iniciar la configuracion del Dominio. Iniciaremos colocandole el nombre al dominio y seleccionando la casilla de "Agregar un nuevo bosque"</p>
+<p><img alt="Sprint3W" src="../Imagenes/Sprint8/13.png" /></p>
+<p>Continuaremos configurando el dominio en base lo que buscamos.</p>
+<p><img alt="Sprint3W" src="../Imagenes/Sprint8/14.png" /></p>
+<p>Le daremos a Siguiente hasta llegar al apartado de instalacion dejando los valores por defecto en el resto de apartados. Una vez acabe la insalacion el sistema se reiniciara por defecto.</p>
+<p><img alt="Sprint3W" src="../Imagenes/Sprint8/15.png" /></p>
+<p>Si se a instalado correctamente ahora tendria que salir el nombre del dominio antes del ususario.</p>
+<p><img alt="Sprint3W" src="../Imagenes/Sprint8/16.png" /></p>
+<h2 id="gestion-del-dominio">Gestion del dominio</h2>
+<p>En Windows Server se usan las herramientas:</p>
+<ul>
+<li>
+<p>ldifde.exe → Para importar, exportar, modificar o eliminar objetos AD/LDAP usando .ldf.</p>
+</li>
+<li>
+<p>dsadd, dsmod, dsrm, dsquery → Comandos rápidos para tareas en AD.</p>
+</li>
+<li>
+<p>Active Directory Users and Computers (GUI) → Para tareas visuales.</p>
+</li>
+</ul>
+<p>Esto crea un archivo export.ldf con todos los objetos del dominio actual (similar a slapcat).</p>
+<p><img alt="Sprint3W" src="../Imagenes/Sprint8/17.png" /></p>
+<p>Crearemos un archivo .ldf donde crearemos usuarios y grupos
+El archivo quedaria de estamanera con esta estructura</p>
+<p><img alt="Sprint3W" src="../Imagenes/Sprint8/18.png" /></p>
+<p><img alt="Sprint3W" src="../Imagenes/Sprint8/19.png" /></p>
+<p>y ahora ejecutaremos el siguiente archivo</p>
+<p><img alt="Sprint3W" src="../Imagenes/Sprint8/20.png" /></p>
+<p>Ejecutaremos la siguiente comanda <code>ldifde -i -f usuarios.ldf -s localhost -b administrador "" "05092005hH"</code> para ejecutar el documento y que se cree el usuario</p>
+<p><img alt="Sprint3W" src="../Imagenes/Sprint8/21.png" /></p>
+<p>Ahora abriremos el powershell para comprobar que existe el ususario</p>
+<p><img alt="Sprint3W" src="../Imagenes/Sprint8/22.png" /></p>
+<p>Para poder iniciar con el tendremos que colocarle una contraseña por lo que colocaremos el siguiente comando en el powershell y le asignaremos una.</p>
+<p><img alt="Sprint3W" src="../Imagenes/Sprint8/23.png" /></p>
+<p>Para los siguientes pasos tendremos que Importar el modulo de Active Directory en el Power Shell sino habra comandos que no nos dejara utilizar.</p>
+<p><img alt="Sprint3W" src="../Imagenes/Sprint8/24.png" /></p>
+<p>Ahora crearemos despues de haber importado el modulo de active directory una organizacion que se llamara usuarios</p>
+<p><img alt="Sprint3W" src="../Imagenes/Sprint8/25.png" /></p>
+<p>Ahora crearemos un grupo dentro de esa organizacion llamada Default</p>
+<p><img alt="Sprint3W" src="../Imagenes/Sprint8/26.png" /></p>
+<p>Crearemos un usuario dentro de la OU usuarios</p>
+<p><img alt="Sprint3W" src="../Imagenes/Sprint8/27.png" /></p>
+<p>Añadiremos el usuario al grupo Default</p>
+<p><img alt="Sprint3W" src="../Imagenes/Sprint8/28.png" /></p>
+<p>Ahora modificaremos la informacion / atributos de uno de los usuarios</p>
+<p><img alt="Sprint3W" src="../Imagenes/Sprint8/29.png" /></p>
+<p>Ahora eliminaremos un usuario</p>
+<p><img alt="Sprint3W" src="../Imagenes/Sprint8/30.png" /></p>
+<h2 id="entornos-graficos">Entornos Graficos</h2>
+<p>Como entorno grafico utilizaremos la propia herramienta de Active Directory</p>
+<p><img alt="Sprint3W" src="../Imagenes/Sprint8/31.png" /></p>
+<p>Nos situaremos en la OU donde queremos hacer el usuario en nuestro caso en "Usuarios", iremos a la parte de arriba y le daremos a crear nuevo usuario</p>
+<p><img alt="Sprint3W" src="../Imagenes/Sprint8/32.png" /></p>
+<p>Se nos abrira una pestaña donde podemos empezar a crear el usuario con lo que nos pide</p>
+<p><img alt="Sprint3W" src="../Imagenes/Sprint8/33.png" /></p>
+<p>Le colocaremos una contraseña</p>
+<p><img alt="Sprint3W" src="../Imagenes/Sprint8/34.png" /></p>
+<p>Ahora tendremos al usuario nuevo creado de manera grafica</p>
+<p><img alt="Sprint3W" src="../Imagenes/Sprint8/35.png" /></p>
+<p>Ahora para crear un nuevo grupo iremos al mismo sitio donde hemos creado el usuario pero una opcion mas a la derecha.</p>
+<p><img alt="Sprint3W" src="../Imagenes/Sprint8/36.png" /></p>
+<p>Nuevamente se nos abrira una pestaña y podremos comenzar a crear el grupo</p>
+<p><img alt="Sprint3W" src="../Imagenes/Sprint8/37.png" /></p>
+<p>Completaremos el formulario con los datos y ya lo tendriamos creado.</p>
+<p><img alt="Sprint3W" src="../Imagenes/Sprint8/38.png" /></p>
+<p>Para añadir el usuario al nuevo grupo le daremos click derecho -&gt; propiedades en el grupo Prueba y entraremos al apartado de miembros</p>
+<p><img alt="Sprint3W" src="../Imagenes/Sprint8/39.png" /></p>
+<p>Le daremos a Agregar y añadiremos al usuario JGallardo</p>
+<p><img alt="Sprint3W" src="../Imagenes/Sprint8/40.png" /></p>
+<p><img alt="Sprint3W" src="../Imagenes/Sprint8/41.png" /></p>
+<p>Ahora eliminaremos el usuario dando click derecho sobre el y le daremos a Eliminar</p>
+<p><img alt="Sprint3W" src="../Imagenes/Sprint8/42.png" /></p>
+<p><img alt="Sprint3W" src="../Imagenes/Sprint8/43.png" /></p>
+<h2 id="unir-equipos-al-dominio">Unir equipos al dominio</h2>
+<p>Activaremos una maquina de Windows normal y la pondremos en el mismo rango IP que el servidor</p>
+<p><img alt="Sprint3W" src="../Imagenes/Sprint8/44.png" /></p>
+<p>Tendremos que colocarle una IP estatica con las especificaciones del servidor.</p>
+<p><img alt="Sprint3W" src="../Imagenes/Sprint8/46.png" /></p>
+<p>para unirlo al dominio tendremos que ir al mismo apartado que para cambiarle el nombre al equipo, seleccionar en la parte de abajo dominio y colocar el dominio que hemos creado en el otro pc en mi caso "mkdocs.local"</p>
+<p><img alt="Sprint3W" src="../Imagenes/Sprint8/45.png" /></p>
+<p>Colocamos las credenciales con la que nos queremos conectas</p>
+<p><img alt="Sprint3W" src="../Imagenes/Sprint8/47.png" /></p>
+<p><img alt="Sprint3W" src="../Imagenes/Sprint8/48.png" /></p>
+<h2 id="servidor-samba">Servidor SAMBA</h2>
+<p>El apartado de SAMBA es mucho mas complejo en Windows ya que un windows server ya actua propiamente como servidor "SAMBA"</p>
+<h3 id="crear-una-carpeta-compartida">Crear una carpeta compartida</h3>
+<p>Crearemos una carpeta nueva la cual compartiremos.</p>
+<p><img alt="Sprint3W" src="Imagenes/Sprint8/50.png" /></p>
+<p>Le daremos click derecho sobre la carpeta e iremos al apartado de compartir</p>
+<p><img alt="Sprint3W" src="../Imagenes/Sprint8/51.png" /></p>
+<p>Volveremos a darle al apartado de compartir, abriremos el desplegable y colocaremos el nombre de uno de los perfiles del Active Directory.</p>
+<p><img alt="Sprint3W" src="../Imagenes/Sprint8/52.png" /></p>
+<p>En el apartado de Seguridad podriamos indicar la seguridad de los Grupos y los usuarios.</p>
+<p><img alt="Sprint3W" src="../Imagenes/Sprint8/53.png" /></p>
+<p>Le daremos a compartir y ahora probaremos a acceder desde el usuario en la maquina cliente.</p>
+<p><img alt="Sprint3W" src="../Imagenes/Sprint8/54.png" /></p>
+<p>Ahora abrimos el explorador de carpetas y buscamos la ruta de la carpeta compartida.</p>
+<p><img alt="Sprint3W" src="../Imagenes/Sprint8/55.png" /></p>
+<p>Y comprobamos que los permisos se han compartido adecuadamente.</p>
+<p><img alt="Sprint3W" src="../Imagenes/Sprint8/56.png" /></p>
+<h2 id="servidor-nfs">Servidor NFS</h2>
+<p>Abriremos Server Manager para instalar un servidor NFS e iremos a "Agregar roles y caracteristicas"</p>
+<p><img alt="Sprint3W" src="../Imagenes/Sprint8/57.png" /></p>
+<p>Iremos hasta el apartado de "Agregar Roles" e iremos al desplegable de "Servicios de archivos y almacenamiento" y activaremos "Servicios de archivos y iSCSI"</p>
+<p><img alt="Sprint3W" src="../Imagenes/Sprint8/58.png" /></p>
+<p>Expandiremos nuevamente el desplegable y marcaremos "Servidor NFS"
+una vez marcado avanzaremos hasta instalar y lo instalaremos</p>
+<p><img alt="Sprint3W" src="../Imagenes/Sprint8/59.png" /></p>
+<p>Para compartir una carpeta por NFS tendremos que crear primero la carpeta.</p>
+<p><img alt="Sprint3W" src="../Imagenes/Sprint8/60.png" /></p>
+<p>Ahora iremos a propiedades y al apartado de "Uso compartido de NFS" </p>
+<p><img alt="Sprint3W" src="../Imagenes/Sprint8/61.png" /></p>
+<p>Marcaremos la casilla de compartir carpeta para poder modificar los apartados de la carpeta compartida por NFS</p>
+<p><img alt="Sprint3W" src="../Imagenes/Sprint8/62.png" /></p>
+<p>Le daremos al apartado de permisos y ahi podremos agregar a ususarios o IP's para que lo veo un equipo entero.</p>
+<p><img alt="Sprint3W" src="../Imagenes/Sprint8/63.png" /></p>
+<p>Agregare al usuario Hugo con permisos de Lectura y Escritura.</p>
+<p><img alt="Sprint3W" src="../Imagenes/Sprint8/64.png" /></p>
+<h3 id="cliente">CLIENTE</h3>
+<p>Para poder acceder a la carpeta desde el Cliente NFS tendremos que activar la caracteristica en el cliente, asi que accederemos al Panel de control &gt; Programas &gt; Activoar o desactivar las caracteristicas de Windows.</p>
+<p><img alt="Sprint3W" src="../Imagenes/Sprint8/65.png" /></p>
+<p>Activaremos los Servicios de NFS en el cliente.</p>
+<p><img alt="Sprint3W" src="../Imagenes/Sprint8/66.png" /></p>
+<p>Ahora colocaremos la siguiente comanda en el CMD para poder pontar la unidad compartida con NFS en la unidad Z:</p>
+<p><img alt="Sprint3W" src="../Imagenes/Sprint8/67.png" /></p>
+<p>Ahora podremos comprobar con el comando <code>mount</code> que se a creado correctamente.</p>
+<p><img alt="Sprint3W" src="../Imagenes/Sprint8/68.png" /></p>
+<p>Ahora si nos vamos al explorador de archivo podremos ver la carpeta compartida en la Unidad Z: en el apartado "Ubicaciones de red"</p>
+<p><img alt="Sprint3W" src="../Imagenes/Sprint8/69.png" /></p>
+<p>Como podemos ver la carpeta esta vacia asi que crearemos un archivo par acomprobar que se ve en el servidor.</p>
+<p><img alt="Sprint3W" src="../Imagenes/Sprint8/70.png" /></p>
+<p><img alt="Sprint3W" src="../Imagenes/Sprint8/71.png" /></p>
+<p><img alt="Sprint3W" src="../Imagenes/Sprint8/72.png" /></p>
+<h2 id="perfil-movil">Perfil Movil</h2>
+<p>Crearemos una carpeta donde ubicaremos los perfiles moviles</p>
+<p><img alt="Sprint3W" src="../Imagenes/Sprint8/73.png" /></p>
+<p>Ahora compartiremos la carpeta con el dominio al que perteneceran los perfiles moviles. IMPORTANTE! Le colocaremos un $ al final del nombre del recurso compartido para que sea visible en la red</p>
+<p><img alt="Sprint3W" src="../Imagenes/Sprint8/74.png" /></p>
+<p>Le colocaremos los permisos a todos los usuarios del dominio</p>
+<p><img alt="Sprint3W" src="../Imagenes/Sprint8/75.png" /></p>
+<p>Ahora buscaremos el usuario que queremos hacer perfil movil, en mi caso sera Hugo. Entraremos dentro de Usuarios y equipos de Active Directory, seleccionaremos el perfil Hugo y cambiaremos el apartado de Ruta de Perfil y le colocamos la ruta de la carpeta.</p>
+<p><img alt="Sprint3W" src="../Imagenes/Sprint8/76.png" /></p>
+              
+            </div>
+          </div><footer class="custom-footer">
+    <p>
+        <a href="" target="_blank" rel="noopener noreferrer">MKDocs</a> 
+        © 2024 by Hugo Gallardo is licensed under 
+        <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="noopener noreferrer">CC BY-NC-ND 4.0</a>
+    </p>
+</footer>
+    
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../Sprint2W/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
