@@ -87,6 +87,8 @@
     </li>
         </ul>
     </li>
+    <li class="toctree-l2"><a class="reference internal" href="#comandos-generales">Comandos Generales</a>
+    </li>
     <li class="toctree-l2"><a class="reference internal" href="#gestor-de-arrancada">Gestor de arrancada</a>
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#que-es-un-gestor-de-arrancada">¿Que es un Gestor de arrancada?</a>
@@ -230,6 +232,22 @@
 <p><img alt="Licencias" src="../Imagenes/Sprint1/S1.png" /></p>
 <p><img alt="Sprint6" src="../Imagenes/Sprint6/CC.png" /></p>
 <h2 id="puntos-de-restauracion">Puntos de restauracion</h2>
+<p>Con el sistema de ubuntu no trae puntos de restauracion de archivos instantaneos. Por eso la herramienta timeshift hace imagenes del sistema a las que se puede volver.</p>
+<p>Comenzaremos instalano la App de timeshift desde la terminal con <code>sudo apt install timeshift</code></p>
+<p><img alt="Sprint1" src="../Imagenes/Sprint1/11.png" /></p>
+<p>Una vez tengamos instalado el timeshift lo ejecutamos y configuramos, el programa nos permitira guardar en eque estado se encuentran las carpetas de nuestro dispositivo, con este punto de guardado podemos volver en caso de perder datos o informacion. Tambien podremos crear puntos de restaracion por dia, hora, mes o semana</p>
+<p><img alt="Sprint1" src="../Imagenes/Sprint1/12.png" /></p>
+<p>Dejaremos la configuracion predeterminada.</p>
+<p>Nos saldra sobre que discos queremos hacer uso del timeshift en mi caso dejare el default.</p>
+<p><img alt="Sprint1" src="../Imagenes/Sprint1/13.png" /></p>
+<p>Crearemos una carpeta y un archivo sobre la que haremos la instantanea para comprobar su funcionamiento</p>
+<p><img alt="Sprint1" src="../Imagenes/Sprint1/14.png" /></p>
+<p>Seguidamente crearemos un punto de restauracion</p>
+<p><img alt="Sprint1" src="../Imagenes/Sprint1/15.png" /></p>
+<p>Una vez acabe aparecera la instantanea en la lista del time shift</p>
+<p><img alt="Sprint1" src="../Imagenes/Sprint1/16.png" /></p>
+<p>La seleccionamos y nos permitira restaurar la instantnea</p>
+<p><img alt="Sprint1" src="../Imagenes/Sprint1/17.png" /></p>
 <h2 id="configuracion-basica-de-la-red">Configuracion básica de la red</h2>
 <p>Nos introducimos dentro de la carpeta <strong><em>"/etc/netplan"</em></strong> y modificamos el archivo de Red añadiendo la configuracion que nosotros queramos para nuestra red</p>
 <p><img alt="Configuracion RED" src="../Imagenes/Sprint1/Configuracion%20Netplan.png" /></p>
@@ -274,6 +292,43 @@ instal·la nous paquets</li>
 <p><img alt="desinstalación" src="../Imagenes/Sprint1/desinstalacion.png" /></p>
 <h4 id="repositorios">Repositorios</h4>
 <p>Los repositoris son aquellas zonas donde busca el sistema el paquete que tu quieres instalar con un "apt", en ocasiones si en la instalacion de ubuntu no seleccionamos la opcion avanzada no nos añadira repositorios como el de "google" por lo que abra paquetes que no se podran instalar ya que no los encontrara.</p>
+<h2 id="comandos-generales">Comandos Generales</h2>
+<ul>
+<li>ls: Lista los archivos y carpetas del directorio actual </li>
+</ul>
+<p><img alt="Sprint1" src="../Imagenes/Sprint1/18.png" /></p>
+<ul>
+<li>cd: Cambia de directorio.</li>
+</ul>
+<p><img alt="Sprint1" src="../Imagenes/Sprint1/19.png" /></p>
+<ul>
+<li>pwd: Muestra la ruta del directorio actual</li>
+</ul>
+<p><img alt="Sprint1" src="../Imagenes/Sprint1/20.png" /></p>
+<ul>
+<li>mkdir: Crea un nuevo directorio.</li>
+</ul>
+<p><img alt="Sprint1" src="../Imagenes/Sprint1/21.png" /></p>
+<ul>
+<li>rm: Elimina archivos o carpetas. Usa <code>-r para eliminar carpetas</code></li>
+</ul>
+<p><img alt="Sprint1" src="../Imagenes/Sprint1/22.png" /></p>
+<ul>
+<li>cp: Copia archivos o carpetas</li>
+</ul>
+<p><img alt="Sprint1" src="../Imagenes/Sprint1/23.png" /></p>
+<ul>
+<li>mv: Mueve o renombra archivos/carpetas</li>
+</ul>
+<p><img alt="Sprint1" src="../Imagenes/Sprint1/24.png" /></p>
+<ul>
+<li>touch: Crea un archivo vacio</li>
+</ul>
+<p><img alt="Sprint1" src="../Imagenes/Sprint1/25.png" /></p>
+<ul>
+<li>find: Busca archivos</li>
+</ul>
+<p><img alt="Sprint1" src="../Imagenes/Sprint1/26.png" /></p>
 <h2 id="gestor-de-arrancada">Gestor de arrancada</h2>
 <h3 id="que-es-un-gestor-de-arrancada">¿Que es un Gestor de arrancada?</h3>
 <p>Un Gestor de Arrancada (o "Boot Manager" en inglés) es un software que se encarga de gestionar el proceso de arranque del sistema operativo. Su función principal es determinar qué sistema operativo cargar si hay múltiples instalados y facilitar la selección del mismo.</p>
