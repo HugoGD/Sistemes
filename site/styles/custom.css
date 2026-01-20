@@ -1,0 +1,277 @@
+/* --- ESTILOS GLOBALES Y TIPOGRAFÍA --- */
+:root {
+    --primary-color: #2980b9;
+    --secondary-color: #2c3e50; /* Sidebar color */
+    --accent-color: #1abc9c;
+    --text-color: #333;
+    --bg-light: #f4f6f8; /* Fondo general */
+    --white: #ffffff;    /* Fondo tarjetas/contenido */
+    --sidebar-width: 300px;
+}
+
+/* --- DEFINICIÓN DE VARIABLES PARA MODO OSCURO --- */
+body.dark-mode {
+    --text-color: #e0e0e0;
+    --bg-light: #121212;
+    --white: #1e1e1e;
+    --secondary-color: #0f1115; /* Sidebar más oscuro */
+    --primary-color: #3498db;   /* Azul un poco más brillante para contraste */
+}
+
+/* Ajustes específicos para elementos en modo oscuro */
+body.dark-mode .wy-menu-vertical li a:hover {
+    background-color: rgba(255,255,255,0.1);
+}
+
+body.dark-mode .card {
+    border-color: #333;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+body.dark-mode .hero-subtitle {
+    color: #bbb;
+}
+
+body.dark-mode .wy-menu-vertical p.caption {
+    color: #666;
+}
+
+/* --- FIN VARIABLES --- */
+
+body {
+    font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    color: var(--text-color);
+    background-color: var(--bg-light);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.3s, color 0.3s; /* Transición suave */
+}
+
+/* --- FORZADO DE ESTRUCTURA --- */
+.wy-nav-side {
+    background-color: var(--secondary-color);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: var(--sidebar-width);
+    height: 100vh;
+    overflow-y: auto;
+    z-index: 200;
+    padding-bottom: 2em;
+    transition: background-color 0.3s;
+}
+
+.wy-nav-content-wrap {
+    margin-left: var(--sidebar-width);
+    background-color: var(--bg-light);
+    min-height: 100vh;
+    transition: background-color 0.3s;
+}
+
+/* --- ESTILOS BARRA LATERAL --- */
+.wy-side-nav-search {
+    background-color: rgba(0,0,0,0.2);
+    padding: 20px;
+    text-align: center;
+}
+
+.wy-side-nav-search a {
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.2em;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.wy-form input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    border-radius: 4px;
+    border: none;
+    box-sizing: border-box;
+}
+
+.wy-menu-vertical {
+    padding: 10px 0;
+}
+
+.wy-menu-vertical p.caption {
+    color: #888;
+    text-transform: uppercase;
+    font-size: 0.85em;
+    padding: 10px 20px;
+    margin: 0;
+    font-weight: bold;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.wy-menu-vertical ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.wy-menu-vertical li a {
+    color: #d9d9d9;
+    padding: 10px 20px;
+    display: block;
+    text-decoration: none;
+    border-left: 3px solid transparent;
+    transition: all 0.2s;
+}
+
+.wy-menu-vertical li a:hover {
+    background-color: rgba(255,255,255,0.05);
+    color: #fff;
+    border-left-color: var(--primary-color);
+}
+
+/* --- CONTENIDO PRINCIPAL --- */
+.wy-nav-content {
+    padding: 20px 40px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.rst-content {
+    background: var(--white);
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: background-color 0.3s;
+}
+
+h1, h2, h3 {
+    color: var(--text-color); /* Cambiado a text-color para modo oscuro */
+    font-weight: 600;
+}
+
+h1 {
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+}
+
+/* --- INDEX LANDING PAGE --- */
+.hero-section {
+    text-align: center;
+    padding: 40px 0 60px;
+}
+
+.hero-title {
+    font-size: 3em;
+    color: var(--text-color);
+    border: none !important;
+}
+
+.hero-subtitle {
+    color: #666;
+    font-size: 1.2em;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.card {
+    background: var(--white);
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 30px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.card h3 {
+    color: var(--primary-color);
+}
+
+.card p {
+    color: var(--text-color);
+    opacity: 0.8;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    border-color: var(--primary-color);
+}
+
+.btn-link {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 25px;
+    background-color: var(--primary-color);
+    color: white !important;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.btn-link:hover {
+    background-color: #1f618d;
+    color: #fff !important;
+}
+
+.footer-custom {
+    text-align: center;
+    margin-top: 60px;
+    color: #888;
+    font-size: 0.9em;
+    border-top: 1px solid rgba(0,0,0,0.1);
+    padding-top: 20px;
+}
+
+/* --- BOTÓN FLOTANTE MODO OSCURO --- */
+.theme-toggle-btn {
+    position: fixed;
+    top: 20px;
+    right: 30px;
+    background-color: var(--white);
+    color: var(--text-color);
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.theme-toggle-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .wy-nav-side {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+    .wy-nav-content-wrap {
+        margin-left: 0;
+    }
+    .theme-toggle-btn {
+        top: 10px;
+        right: 10px;
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+    }
+}
