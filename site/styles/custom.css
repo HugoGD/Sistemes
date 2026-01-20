@@ -1,42 +1,26 @@
 /* --- ESTILOS GLOBALES Y TIPOGRAFÍA --- */
 :root {
     --primary-color: #2980b9;
-    --secondary-color: #2c3e50; /* Sidebar color */
+    --secondary-color: #2c3e50;
     --accent-color: #1abc9c;
     --text-color: #333;
-    --bg-light: #f4f6f8; /* Fondo general */
-    --white: #ffffff;    /* Fondo tarjetas/contenido */
+    --bg-light: #f4f6f8;
+    --white: #ffffff;
     --sidebar-width: 300px;
+    --sidebar-bg: #2c3e50;
+    --menu-active-bg: #e3e3e3; /* Fondo para el menú desplegado */
 }
 
-/* --- DEFINICIÓN DE VARIABLES PARA MODO OSCURO --- */
+/* VARIABLES MODO OSCURO */
 body.dark-mode {
     --text-color: #e0e0e0;
     --bg-light: #121212;
     --white: #1e1e1e;
-    --secondary-color: #0f1115; /* Sidebar más oscuro */
-    --primary-color: #3498db;   /* Azul un poco más brillante para contraste */
+    --secondary-color: #0f1115;
+    --sidebar-bg: #1a1c23;
+    --menu-active-bg: #2c2f36;
+    --primary-color: #5dade2;
 }
-
-/* Ajustes específicos para elementos en modo oscuro */
-body.dark-mode .wy-menu-vertical li a:hover {
-    background-color: rgba(255,255,255,0.1);
-}
-
-body.dark-mode .card {
-    border-color: #333;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
-}
-
-body.dark-mode .hero-subtitle {
-    color: #bbb;
-}
-
-body.dark-mode .wy-menu-vertical p.caption {
-    color: #666;
-}
-
-/* --- FIN VARIABLES --- */
 
 body {
     font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
@@ -45,12 +29,12 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    transition: background-color 0.3s, color 0.3s; /* Transición suave */
+    transition: background-color 0.3s, color 0.3s;
 }
 
 /* --- FORZADO DE ESTRUCTURA --- */
 .wy-nav-side {
-    background-color: var(--secondary-color);
+    background-color: var(--sidebar-bg);
     position: fixed;
     top: 0;
     left: 0;
@@ -69,7 +53,7 @@ body {
     transition: background-color 0.3s;
 }
 
-/* --- ESTILOS BARRA LATERAL --- */
+/* --- ESTILOS DE NAVEGACIÓN (HEADER) --- */
 .wy-side-nav-search {
     background-color: rgba(0,0,0,0.2);
     padding: 20px;
@@ -93,6 +77,7 @@ body {
     box-sizing: border-box;
 }
 
+/* --- MENÚ LATERAL --- */
 .wy-menu-vertical {
     padding: 10px 0;
 }
@@ -101,7 +86,7 @@ body {
     color: #888;
     text-transform: uppercase;
     font-size: 0.85em;
-    padding: 10px 20px;
+    padding: 15px 20px 5px 20px; /* Más espacio arriba */
     margin: 0;
     font-weight: bold;
     border-bottom: 1px solid rgba(255,255,255,0.05);
@@ -113,6 +98,7 @@ body {
     margin: 0;
 }
 
+/* Items normales */
 .wy-menu-vertical li a {
     color: #d9d9d9;
     padding: 10px 20px;
@@ -122,10 +108,58 @@ body {
     transition: all 0.2s;
 }
 
+/* Hover en items normales (fondo oscuro) */
 .wy-menu-vertical li a:hover {
     background-color: rgba(255,255,255,0.05);
     color: #fff;
     border-left-color: var(--primary-color);
+}
+
+/* --- CORRECCIONES PARA ELEMENTO SELECCIONADO (FONDO BLANCO/GRIS) --- */
+/* Cuando se despliega un Sprint (clase .current) */
+.wy-menu-vertical li.current {
+    background-color: var(--menu-active-bg);
+}
+
+/* El título principal del elemento seleccionado (ej: Sprint 1) */
+.wy-menu-vertical li.current > a {
+    color: var(--text-color);
+    font-weight: bold;
+    border-left-color: var(--primary-color);
+    padding: 12px 20px;
+    background-color: rgba(0,0,0,0.05); /* Ligeramente más oscuro que el fondo */
+}
+
+/* --- SOLUCIÓN AL PROBLEMA DEL HOVER INVISIBLE --- */
+/* Específicamente para enlaces dentro del bloque activo */
+.wy-menu-vertical li.current a:hover {
+    background-color: rgba(0,0,0,0.1) !important; /* Gris un poco más oscuro */
+    color: var(--primary-color) !important; /* Texto AZUL en lugar de blanco */
+    cursor: pointer;
+}
+
+/* --- SOLUCIÓN AL ESPACIADO --- */
+/* Submenús (la lista desplegada: Instalación, Licenciamiento, etc.) */
+.wy-menu-vertical li.current ul {
+    display: block;
+    padding-top: 10px; /* Espacio superior para separarlo del título */
+    padding-bottom: 10px;
+}
+
+/* Los items del submenú */
+.wy-menu-vertical li.toctree-l2 a, 
+.wy-menu-vertical li.toctree-l3 a {
+    padding: 8px 20px 8px 35px; /* Más indentación */
+    font-size: 0.95em;
+    color: var(--text-color); /* Color oscuro por defecto */
+    opacity: 0.8;
+}
+
+/* Hover en submenús */
+.wy-menu-vertical li.toctree-l2 a:hover,
+.wy-menu-vertical li.toctree-l3 a:hover {
+    opacity: 1;
+    color: var(--primary-color);
 }
 
 /* --- CONTENIDO PRINCIPAL --- */
@@ -143,9 +177,11 @@ body {
     transition: background-color 0.3s;
 }
 
-h1, h2, h3 {
-    color: var(--text-color); /* Cambiado a text-color para modo oscuro */
+/* Títulos */
+h1, h2, h3, h4 {
+    color: var(--text-color);
     font-weight: 600;
+    margin-top: 1.5em;
 }
 
 h1 {
@@ -153,6 +189,22 @@ h1 {
     border-bottom: 2px solid var(--primary-color);
     padding-bottom: 10px;
     margin-bottom: 30px;
+    margin-top: 0;
+}
+
+/* Imágenes */
+.rst-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 6px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    margin: 20px 0;
+    border: 1px solid #e1e4e8;
+}
+
+body.dark-mode .rst-content img {
+    opacity: 0.9;
+    border-color: #444;
 }
 
 /* --- INDEX LANDING PAGE --- */
@@ -172,6 +224,8 @@ h1 {
     font-size: 1.2em;
 }
 
+body.dark-mode .hero-subtitle { color: #bbb; }
+
 .grid-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -190,20 +244,16 @@ h1 {
     box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
 
-.card h3 {
-    color: var(--primary-color);
-}
-
-.card p {
-    color: var(--text-color);
-    opacity: 0.8;
-}
+.card h3 { color: var(--primary-color); }
+.card p { color: var(--text-color); opacity: 0.8; }
 
 .card:hover {
     transform: translateY(-5px);
     box-shadow: 0 15px 30px rgba(0,0,0,0.1);
     border-color: var(--primary-color);
 }
+
+body.dark-mode .card { border-color: #333; }
 
 .btn-link {
     display: inline-block;
@@ -222,6 +272,16 @@ h1 {
     color: #fff !important;
 }
 
+.contact-section {
+    margin-top: 50px;
+    padding: 20px;
+    background-color: rgba(0,0,0,0.03);
+    border-left: 5px solid var(--accent-color);
+    border-radius: 4px;
+}
+
+body.dark-mode .contact-section { background-color: rgba(255,255,255,0.05); }
+
 .footer-custom {
     text-align: center;
     margin-top: 60px;
@@ -231,7 +291,7 @@ h1 {
     padding-top: 20px;
 }
 
-/* --- BOTÓN FLOTANTE MODO OSCURO --- */
+/* --- BOTÓN FLOTANTE --- */
 .theme-toggle-btn {
     position: fixed;
     top: 20px;
@@ -257,21 +317,8 @@ h1 {
     box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
 
-/* Responsivo */
 @media (max-width: 768px) {
-    .wy-nav-side {
-        width: 100%;
-        height: auto;
-        position: relative;
-    }
-    .wy-nav-content-wrap {
-        margin-left: 0;
-    }
-    .theme-toggle-btn {
-        top: 10px;
-        right: 10px;
-        width: 40px;
-        height: 40px;
-        font-size: 20px;
-    }
+    .wy-nav-side { width: 100%; height: auto; position: relative; }
+    .wy-nav-content-wrap { margin-left: 0; }
+    .theme-toggle-btn { top: 10px; right: 10px; width: 40px; height: 40px; font-size: 20px; }
 }
