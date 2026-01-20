@@ -13,7 +13,6 @@
     <link href="styles/custom.css" rel="stylesheet" />
     
     <script>
-        // Current page data
         var mkdocs_page_name = "Introducción";
         var mkdocs_page_input_path = "index.md";
         var mkdocs_page_url = null;
@@ -25,16 +24,14 @@
 
 <body class="wy-body-for-nav" role="document">
 
-  <button id="theme-toggle" class="theme-toggle-btn" title="Cambiar tema">
-      🌙
-  </button>
+  <button id="theme-toggle" class="theme-toggle-btn" title="Cambiar tema">🌙</button>
 
   <div class="wy-grid-for-nav">
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
     <div class="wy-side-scroll">
       <div class="wy-side-nav-search">
-          <a href="." class="icon icon-home"> Proyecto FOG Hugo
-        </a><div role="search">
+          <a href="." class="icon icon-home"> Proyecto FOG Hugo</a>
+        <div role="search">
   <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
       <input type="text" name="q" placeholder="Buscar docs" aria-label="Search docs" title="Escribe aquí para buscar" />
   </form>
@@ -66,21 +63,19 @@
     </nav>
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-      
       <div class="wy-nav-content">
         <div class="rst-content">
-          
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
-              
+                
                 <div class="hero-section">
                     <h1 class="hero-title">¡Hola! Soy Hugo Gallardo</h1>
                     <p class="hero-subtitle">Administrador de Sistemas en formación</p>
-                    <p>Bienvenidos a mi repositorio de documentación. Aquí encontrarás una guía detallada y estructurada sobre administración de sistemas, abarcando desde configuraciones básicas hasta gestión avanzada de servicios.</p>
+                    <p>Bienvenidos a mi repositorio de documentación. Aquí encontrarás una guía detallada y estructurada sobre administración de sistemas.</p>
                 </div>
 
                 <h2>¿Qué encontrarás aquí?</h2>
-                <p>Este proyecto, <strong>Proyecto FOG</strong>, recopila mis prácticas y aprendizajes divididos en Sprints. La documentación está organizada por sistema operativo para facilitar la navegación.</p>
+                <p>Este proyecto, <strong>Proyecto FOG</strong>, recopila mis prácticas y aprendizajes divididos en Sprints.</p>
 
                 <div class="grid-container">
                     <div class="card" onclick="location.href='Sprint1/';">
@@ -96,9 +91,9 @@
                     </div>
                 </div>
 
-                <div class="contact-section" style="margin-top: 50px; padding: 20px; background-color: rgba(0,0,0,0.03); border-left: 5px solid var(--accent-color); border-radius: 4px;">
+                <div class="contact-section">
                     <h3>📬 Contacto y Soporte</h3>
-                    <p>Si tienes alguna duda sobre el contenido, encuentras algún error o quieres charlar sobre sistemas, no dudes en contactarme.</p>
+                    <p>Si tienes alguna duda sobre el contenido, no dudes en contactarme.</p>
                     <ul>
                         <li><strong>Email:</strong> <a href="mailto:hgallardo05@hotmail.com">hgallardo05@hotmail.com</a></li>
                         <li><strong>GitHub:</strong> <a href="https://github.com/" target="_blank">Mi Repositorio</a></li>
@@ -109,32 +104,25 @@
                     <p>© 2024 Hugo Gallardo. Documentación bajo licencia <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">Creative Commons BY-NC-ND 4.0</a>.</p>
                 </div>
 
-                </div>
+            </div>
           </div>
-          
         </div>
       </div>
-
     </section>
-
   </div>
 
   <script>
       const toggleButton = document.getElementById('theme-toggle');
       const body = document.body;
-
-      // 1. Comprobar si hay una preferencia guardada
       const currentTheme = localStorage.getItem('theme');
+
       if (currentTheme === 'dark') {
           body.classList.add('dark-mode');
-          toggleButton.textContent = '☀️'; // Cambiar icono a sol
+          toggleButton.textContent = '☀️';
       }
 
-      // 2. Función al hacer clic
       toggleButton.addEventListener('click', () => {
           body.classList.toggle('dark-mode');
-
-          // Cambiar el icono y guardar preferencia
           if (body.classList.contains('dark-mode')) {
               toggleButton.textContent = '☀️';
               localStorage.setItem('theme', 'dark');
@@ -144,12 +132,5 @@
           }
       });
   </script>
-  
-    <script src="js/jquery-3.6.0.min.js"></script>
-    <script>var base_url = ".";</script>
-    <script src="js/theme_extra.js"></script>
-    <script src="js/theme.js"></script>
-    <script src="search/main.js"></script>
-
 </body>
 </html>
