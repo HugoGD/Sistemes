@@ -24,8 +24,6 @@
 
 <body class="wy-body-for-nav" role="document">
 
-  <button id="theme-toggle" class="theme-toggle-btn" title="Cambiar tema">🌙</button>
-
   <div class="wy-grid-for-nav">
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
     <div class="wy-side-scroll">
@@ -103,34 +101,17 @@
                 <div class="footer-custom">
                     <p>© 2024 Hugo Gallardo. Documentación bajo licencia <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">Creative Commons BY-NC-ND 4.0</a>.</p>
                 </div>
-
-            </div>
+                </div>
           </div>
         </div>
       </div>
     </section>
   </div>
 
-  <script>
-      const toggleButton = document.getElementById('theme-toggle');
-      const body = document.body;
-      const currentTheme = localStorage.getItem('theme');
-
-      if (currentTheme === 'dark') {
-          body.classList.add('dark-mode');
-          toggleButton.textContent = '☀️';
-      }
-
-      toggleButton.addEventListener('click', () => {
-          body.classList.toggle('dark-mode');
-          if (body.classList.contains('dark-mode')) {
-              toggleButton.textContent = '☀️';
-              localStorage.setItem('theme', 'dark');
-          } else {
-              toggleButton.textContent = '🌙';
-              localStorage.setItem('theme', 'light');
-          }
-      });
-  </script>
+  <script src="js/jquery-3.6.0.min.js"></script>
+  <script>var base_url = ".";</script>
+  <script src="js/theme_extra.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="search/main.js"></script>
 </body>
 </html>
